@@ -114,12 +114,12 @@ void shoppingCartMenu(Controller* controller) {
     case 3:
         controller->clearShoppingCart();
         if (controller->get_shoppingCartEmpty() == true) {
-            cout << "¡Su carrito se vacio correctamente!" << endl;
+            cout << "Su carrito se vacio correctamente" << endl;
             system("pause");
             shoppingCartMenu(controller);
         }
         else {
-            cout << "¡Su carrito no pudo ser vaciado!" << endl;
+            cout << "Su carrito no pudo ser vaciado" << endl;
             system("pause");
             shoppingCartMenu(controller);
         }
