@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Archivos de origen">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Archivos de encabezado">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Archivos de recursos">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Estructura de datos">
+      <UniqueIdentifier>{9600feaf-aa36-40ca-b9c9-6ea9990a3e31}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Base de datos">
+      <UniqueIdentifier>{3d4f4106-3747-4a0f-a175-cc82bfe7b1cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Sistema de acceso">
+      <UniqueIdentifier>{836280dd-2c3d-4f0a-afa7-d4a8846d7c66}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Sistema de compras">
+      <UniqueIdentifier>{83f4431d-3260-4977-a239-82f2bb27d5ad}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Client.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="DoublyLinkedList.h">
+      <Filter>Archivos de encabezado\Estructura de datos</Filter>
+    </ClInclude>
+    <ClInclude Include="MyVector.h">
+      <Filter>Archivos de encabezado\Estructura de datos</Filter>
+    </ClInclude>
+    <ClInclude Include="Stack.h">
+      <Filter>Archivos de encabezado\Estructura de datos</Filter>
+    </ClInclude>
+    <ClInclude Include="CustomerDatabase.h">
+      <Filter>Archivos de encabezado\Base de datos</Filter>
+    </ClInclude>
+    <ClInclude Include="ProductDatabase.h">
+      <Filter>Archivos de encabezado\Base de datos</Filter>
+    </ClInclude>
+    <ClInclude Include="Product.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="Login.h">
+      <Filter>Archivos de encabezado\Sistema de acceso</Filter>
+    </ClInclude>
+    <ClInclude Include="ShoppingCart.h">
+      <Filter>Archivos de encabezado\Sistema de compras</Filter>
+    </ClInclude>
+    <ClInclude Include="Controller.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="OrderInformation.h">
+      <Filter>Archivos de encabezado\Sistema de compras</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

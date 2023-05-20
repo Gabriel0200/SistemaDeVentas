@@ -1,0 +1,101 @@
+0,A1234,Televisor LCD 32 pulgadas,347.89
+1,B2345,Cafetera electrica,703.45
+2,C3456,Licuadora,556.12
+3,D4567,Horno electrico,217.01
+4,E5678,Lavadora,423.76
+5,F6789,Aspiradora,648.56
+6,G7890,Batidora,865.44
+7,H8901,Plancha,431.78
+8,I9012,Tostadora,572.35
+9,J0123,Microondas,823.91
+10,K1234,Refrigerador,953.08
+11,L2345,Secadora,356.72
+12,M3456,Cocina electrica,183.24
+13,N4567,Ventilador,671.46
+14,O5678,Enfriador de aire,791.34
+15,P6789,Maquina de coser,927.11
+16,Q7890,Asador electrico,718.83
+17,R8901,Purificador de aire,496.01
+18,S9012,Estufa electrica,656.29
+19,T0123,Calefactor,851.23
+20,U1234,Plancha para el cabello,965.03
+21,V2345,Batidora de mano,184.42
+22,W3456,Proyector,420.87
+23,X4567,Humidificador,376.06
+24,Y5678,Deshumidificador,894.09
+25,Z6789,Exprimidor de jugos,164.32
+26,A2345B,Maquina de afeitar electrica,891.14
+27,B3456C,Cafetera expres,700.65
+28,C4567D,Olla arrocera,639.79
+29,D5678E,Freidora electrica,827.66
+30,E6789F,Sandwichera,426.72
+31,F7890G,Plancha para ropa a vapor,282.47
+32,G8901H,Robot de cocina,240.34
+33,H9012I,Picadora de alimentos,521.59
+34,I0123J,Batidora de vaso,949.13
+35,J1234K,Hervidor de agua electrico,149.21
+36,K2345L,Tetera electrica,319.46
+37,L3456M,Parrilla electrica,486.17
+38,M4567N,Hornilla electrica,417.94
+39,N5678O,Dispensador de agua,306.87
+40,O6789P,Nevera portatil,974.91
+41,P7890Q,Tostadora de pan con ranuras extra anchas,981.72
+42,Q8901R,Cafetera de goteo programable,735.55
+43,R9012S,Horno tostador con conveccion,611.99
+44,S0123T,Maquina de palomitas,583.13
+45,T1234U,Asador de pavo,411.22
+46,U2345V,Cortina electrica,399.68
+47,V3456W,Calentador de toallas,987.29
+48,W4567X,Extractor de jugos,791.64
+49,X5678Y,Molinillo de cafe,220.01
+50,DFG89,Robot de cocina KitchenAid,633.52
+51,MNB43,Horno electrico Hamilton Beach,478.76
+52,POI76,Refrigerador LG,784.96
+53,AWR56,Lavavajillas Whirlpool,137.23
+54,JHG34,Estufa de gas GE,773.34
+55,BVC21,Hervidor electrico Oster,277.89
+56,POK89,Horno tostador Black+Decker,252.04
+57,QWE76,Plancha de vapor Philips,638.54
+58,KIL98,Cafetera Keurig,286.02
+59,ASD34,Licuadora Ninja,969.57
+60,LKJ23,Procesador de alimentos Cuisinart,826.71
+61,QAZ67,Exprimidor electrico Black+Decker,902.27
+62,POI98,Asador electrico Char-Broil,471.42
+63,WSX45,Batidora de mano KitchenAid,694.97
+64,EDC23,Robot aspirador Roomba,690.39
+65,KJH43,Cafetera Nespresso,371.03
+66,ZXC76,Aspiradora Shark,480.96
+67,RFV21,Microondas Panasonic,898.83
+68,BGT67,Tostadora Hamilton Beach,643.32
+69,HYU12,Parrilla electrica George Foreman,385.75
+70,NBH67,Plancha de asar T-fal,625.92
+71,EDF45,Aspiradora Bissell,510.99
+72,VCF34,Procesador de alimentos Black+Decker,287.79
+73,POI67,Hervidor electrico Hamilton Beach,711.63
+74,MKJ21,Robot de cocina Moulinex,514.48
+75,WSX12,Licuadora Oster,849.58
+76,RFV89,Exprimidor electrico Hamilton Beach,715.53
+77,POI34,Aspiradora Dirt Devil,720.05
+78,FGH67,Robot de cocina Kenwood,750.78
+79,KJH21,Tostadora Oster,927.14
+80,WSX67,Molino de cafe Cuisinart,554.29
+81,RFV12,Plancha de vapor Black+Decker,394.84
+82,POI56,Horno electrico T-fal,765.78
+83,RFV76,Cafetera Hamilton Beach,680.81
+84,WSX23,Procesador de alimentos Hamilton Beach,564.07
+85,MNB56,Aspiradora Electrolux,690.28
+86,RFV45,Extractor de jugos Black+Decker,918.55
+87,WSX98,Robot aspirador Neato Robotics,352.49
+88,POK21,Batidora de pedestal KitchenAid,904.33
+89,ASD89,Plancha de asar Black+Decker,632.04
+90,RFV34,Cafetera Oster,796.87
+91,POI23,Aspiradora Hoover,657.96
+92,LKJ67,Horno electrico Black+Decker,219.75
+93,WSX56,Robot de cocina Bosch,579.81
+94,RFV98,Microondas LG,186.32
+95,MNB12,Tostadora Cuisinart,467.05
+96,WSX21,Procesador de alimentos Oster,807.06
+97,RFV67,Plancha de asar George Foreman,578.52
+98,POI45,Cafetera Krups,932.46
+99,KJH56,Exprimidor electrico Cuisinart,436.26
+100,WSX34,Aspiradora Eureka,250.50
