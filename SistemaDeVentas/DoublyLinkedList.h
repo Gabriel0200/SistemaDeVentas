@@ -235,7 +235,7 @@ public:
         else throw "List is empty";
     }
     size_t size() {return this->_size;}
-    void delete_by_value(std::function<bool(T)> search) {//funciona (ya borra) !!
+    void delete_by_value(std::function<bool(T)> search) {
         Node* current = this->_start;
         Node* next = nullptr;
         Node* prev = nullptr;
