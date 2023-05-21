@@ -6,7 +6,6 @@
 #include "Client.h"
 #include "MyVector.h"
 typedef unsigned int ui;
-//using namespace std;
 
 class ShoppingCart {
     ProductDatabase _productList;
@@ -41,19 +40,21 @@ public:
         }
         else  return false;
     }
-    void deleteByCode(string code) {
-        this->totalPrice = 0;
+    void deleteByCode(string code) { //Los precios del vector no se borran todavía
         auto search = [&](Product p)->bool {
             if (code == p.getCode()) {
                 return true;
             }
             return false;
         };
-        cartList.delete_by_value(search);
+        cartList.delete_by_value(search);   
+        //float price = stof(_product.getPrice());
+        //vprecios->delete_by_value(price);
     }
     bool emptyShoppingCart() {
         cartList.clear();
         totalPrice = 0;
+        vprecios->clear();
         if (cartList.size() == 0) {
             return true;
         }
@@ -71,9 +72,9 @@ public:
     }
     float getPrecioTotal() {
         this->totalPrice = 0;
-        //for (int i = 0; i < arrSize; ++i) {
-        //    totalPrice += arrPrices[i];
-        //}
+        for (int i = 0; i < vprecios->size(); ++i) {
+            totalPrice += vprecios->getVector(i);
+        }
         return totalPrice;
     }
 };

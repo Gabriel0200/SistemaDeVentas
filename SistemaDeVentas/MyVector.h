@@ -51,6 +51,13 @@ public:
         }
         pop_back();
     }
+    /*void delete_by_value(T value) { //Esta funcion no funciona todavía
+        for (int i = 0; i < current; ++i) {
+            if (arr[i] == value) {
+                delete_by_index(i + 1);
+            }
+        }
+    }*/
     void clear() {
         delete[] arr;
         current = 0;
