@@ -179,6 +179,7 @@ void orderInformationMenu(Controller* controller) {
     switch (code) {
     case 1:
         controller->showPaidOrder();
+        system("pause");
         break;
     case 2: mainMenu(controller);
         break;
