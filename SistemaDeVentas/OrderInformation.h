@@ -27,7 +27,7 @@ public:
             if (_name == c.getName()) {
                 return true;
             }
-            else return false;
+            return false;
         };
         if (this->_clientlist.get_list().search_by_value(search)) {
             this->_client = _clientlist.get_list().return_by_value(search);
@@ -35,7 +35,7 @@ public:
             std::cout << this->_client.toString() << std::endl;
             std::cout << "Productos Comprados por " + this->_client.getName() << std::endl;
             shoppingCart->showShoppingCart();
-            std::cout << "EL precio Total por la compra es de: $" << this->_price << std::endl;
+            std::cout << "El precio Total por la compra es de: $" << this->_price << std::endl;
         }
     }
     void setClientName(string name) { this->_name = name; }

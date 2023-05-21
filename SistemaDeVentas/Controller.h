@@ -1,6 +1,5 @@
 #ifndef CONTROLLER_H
 #define CONTROLLER_H
-#pragma once
 #include "Client.h"
 #include "DoublyLinkedList.h"
 #include "OrderInformation.h"
