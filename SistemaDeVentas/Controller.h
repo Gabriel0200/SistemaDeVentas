@@ -1,5 +1,7 @@
 #ifndef CONTROLLER_H
 #define CONTROLLER_H
+#pragma once
+#include <string>
 #include "Client.h"
 #include "DoublyLinkedList.h"
 #include "OrderInformation.h"
@@ -9,7 +11,6 @@
 #include "ShoppingCart.h"
 #include "MyVector.h"
 #include "Login.h"
-#include <string>
 
 class Controller {
 	Login* login;
@@ -83,6 +84,10 @@ public:
 	}
 	bool get_shoppingCartEmpty() {
 		return shoppingCartEmpty;
+	}
+	void orderMerge() {
+		shoppingCart_v->sortList();
+		shoppingCart_v->showShoppingCart();
 	}
 };
 #endif

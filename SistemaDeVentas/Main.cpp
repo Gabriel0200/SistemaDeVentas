@@ -90,8 +90,9 @@ void shoppingCartMenu(Controller* controller) {
     cout << "2. Borrar producto del carrito" << endl;
     cout << "3. Vaciar carrito de compras" << endl;
     cout << "4. Mostrar productos en carrito" << endl;
-    cout << "5. Proceder con la compra" << endl;
-    cout << "6. Volver al menu principal" << endl;
+    cout << "5. Ordenar el carrito" << endl;
+    cout << "6. Proceder con la compra" << endl;
+    cout << "7. Volver al menu principal" << endl;
     cout << "___________________________________________" << endl;
     cout << "Ingrese su opcion: ";
     cin >> code;
@@ -134,9 +135,15 @@ void shoppingCartMenu(Controller* controller) {
         shoppingCartMenu(controller);
         break;
     case 5:
-        purchaseMenu(controller);
+        system("cls");
+        controller->orderMerge();
+        system("pause");
+        shoppingCartMenu(controller);
         break;
     case 6:
+        purchaseMenu(controller);
+        break;
+    case 7:
         mainMenu(controller);
         break;
     default:shoppingCartMenu(controller);

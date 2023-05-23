@@ -167,6 +167,7 @@ public:
             aux = aux->next;
         }
     }
+
     //MergeSort
     Node* split(Node* head) {
         Node* fast = head, * slow = head;
@@ -200,10 +201,11 @@ public:
         Node* second = split(head);
         head = mergeSort(head);
         second = mergeSort(second);
-        return merge(head, second);
         this->_start = merge(head, second);
-    } //Revisar stack overflow
-    //Quicksort
+        return this->_start;
+    }//Revisar stack overflow
+
+    //Quick sort
     Node* partition(Node* low, Node* high) {// Quicksort Partition
         int pivot = high->value.getPrice();
         Node* i = low->back;
@@ -217,7 +219,7 @@ public:
         swap(i->value, high->value);
         return i;
     }
-    void recursiveQuickSort(Node* low, Node* high) {// Recursive Quicksort 
+    void recursiveQuickSort(Node* low, Node* high) {// Recursive Quick sort 
         if (high != nullptr && low != high && low != high->next) {
             Node* p = partition(low, high);
             recursiveQuickSort(low, p->back);
