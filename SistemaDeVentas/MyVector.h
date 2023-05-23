@@ -42,14 +42,18 @@ public:
             }
         }
     }
-    void delete_by_index(int idx) {
-        if (idx < 0 || idx >= current) {
-            return;
+    void delete_by_price(float price) {
+        //if (idx < 0 || idx >= current) {
+        //    return;
+        //}
+        //for (int i = idx; i < current - 1; ++i) {
+        //    arr[i] = arr[i + 1];
+        //}
+        for (int i = 0; i < current-1; i++) {
+            if (arr[i - 1] = price) {
+                pop_back();
+            }
         }
-        for (int i = idx; i < current - 1; ++i) {
-            arr[i] = arr[i + 1];
-        }
-        pop_back();
     }
     /*void delete_by_value(T value) { //Esta funcion no funciona todavía
         for (int i = 0; i < current; ++i) {
