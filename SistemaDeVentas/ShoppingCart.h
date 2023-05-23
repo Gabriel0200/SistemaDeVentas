@@ -43,14 +43,14 @@ public:
     void deleteByCode(string code) { //Los precios del vector no se borran todavía
         auto search = [&](Product p)->bool {
             if (code == p.getCode()) {
+                vprecios->delete_by_price(stof(p.getPrice()));
                 return true;
             }
             return false;
         };
-        cartList.delete_by_value(search);   
+        cartList.delete_by_value(search);
         //float price = stof(_product.getPrice());
-        //vprecios->delete_by_value(price);
-    }
+    };
     bool emptyShoppingCart() {
         cartList.clear();
         totalPrice = 0;
