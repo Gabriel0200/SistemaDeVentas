@@ -15,7 +15,7 @@ public:
     unsigned int getId() { return this->_id; }
     void setName(string fullName) { this->_fullName = fullName; }
     string getName() { return this->_fullName; }
-    string toString() { return "Id: " + to_string(this->_id); }
+    string toString() { return "Id: " + to_string(this->_id) + " " + "Nombre: " + this->_fullName; }
 };
 
 #endif
