@@ -8,7 +8,6 @@ class Admin {
 private:
     unsigned int _id;
     string _fullName;
-
 public:
     Admin() {}
     Admin(unsigned int _id, string _fullname) :_id(_id), _fullName(_fullName){}
