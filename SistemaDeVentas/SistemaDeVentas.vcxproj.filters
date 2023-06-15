@@ -60,6 +60,9 @@
     <ClInclude Include="OrderInformation.h">
       <Filter>Archivos de encabezado\Sistema de compras</Filter>
     </ClInclude>
+    <ClInclude Include="Admin.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
