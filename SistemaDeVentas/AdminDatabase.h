@@ -7,11 +7,11 @@
 #include "BST.h"
 
 class AdminDatabase {
-	BinarySearchTree<Admin>* _admin_tree;
+	BinarySearchTree<Admin>* _adminTree;
 
 public:
 	AdminDatabase() {
-		_admin_tree = new BinarySearchTree<Admin>(
+		_adminTree = new BinarySearchTree<Admin>(
 			[](Admin a) -> void {
 				std::cout << a.toString() << "\n";
 			},
@@ -35,15 +35,19 @@ public:
 			id = stoi(aux);
 			getline(ss, aux, ',');
 			name = aux;
-			_admin_tree->insert(Admin(id, name));
+			_adminTree->insert(Admin(id, name));
 		}
 		file.close();
 	}
-	BinarySearchTree<Admin>* get_tree() {
-		return _admin_tree;
-	}
-	void set_tree(BinarySearchTree<Admin>* tree) {
-		_admin_tree = tree;
+	/*BinarySearchTree<Admin>* get_tree() {
+		return _adminTree;
+	}*/
+	bool verifyAdmin(unsigned int adminLoginID) {
+		auto equals = [adminLoginID](Admin a)-> bool {
+			if (a.getId() == adminLoginID) return true;
+			return false;
+		};
+		if (this->_adminTree->find(equals) == true) return true;
 	}
 };
 #endif

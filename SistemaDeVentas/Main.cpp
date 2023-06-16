@@ -5,6 +5,7 @@ using namespace std;
 int code = 0;
 
 void mainMenu(Controller* controller);
+void adminLoginMenu(Controller* controller);
 void checkClientMenu(Controller* controller);
 void buyProductsMenu(Controller* controller);
 void shoppingCartMenu(Controller* controller);
@@ -22,7 +23,8 @@ void mainMenu(Controller* controller) {
     cout << "Bienvenido al sistema de compras de Hiraoka" << endl;
     cout << "___________________________________________" << endl;
     cout << "1. Ingresa nombre de Cliente" << endl;
-    cout << "2. Salir" << endl;
+    cout << "2. Ingresar a Admin" << endl;
+    cout << "3. Salir" << endl;
     cout << "___________________________________________" << endl;
     cout << "Ingrese la opcion que desea: ";
     cin >> code;
@@ -30,9 +32,22 @@ void mainMenu(Controller* controller) {
     case 1:
         checkClientMenu(controller);
         break;
-    case 2: exit(0);
+    case 2: adminLoginMenu(controller);
+        break;
+    case 3: exit(0);
     default: mainMenu(controller);
     }
+}
+void adminLoginMenu(Controller* controller) {
+    unsigned int adminId = 0;
+    system("cls");
+    string name = "";
+    cout << "         Ingresar ID de Administrador      " << endl;
+    cout << "___________________________________________" << endl;
+    cout << "Ingrese su ID del administrador: ";
+    cin >> adminId;
+    controller->enterAdminId(adminId);
+    controller->get_loginAdminVerify() == true ? buyProductsMenu(controller) : (cout << "ID no registrado" << endl, system("pause"), mainMenu(controller));
 }
 void checkClientMenu(Controller* controller) {
     system("cls");

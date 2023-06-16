@@ -10,10 +10,11 @@ private:
     CustomerDatabase _clientList;
     Client _client;
     string _nameLogin;
+
 public:
     Login(DoublyLinkedList<Client> lista, string nameLogin) {
         this->_clientList.set_list(lista);
-        this->_nameLogin = nameLogin;
+        this->_nameLogin = nameLogin; 
     };
     ~Login() {};
     bool verify() {

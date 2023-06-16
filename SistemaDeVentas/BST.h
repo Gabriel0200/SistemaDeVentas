@@ -75,15 +75,15 @@ private:
 		while (aux->leftChild != nullptr) aux = aux->leftChild;
 		return aux;
 	}
-	Node* _find(Node* n, T value) { //busqueda de un nodo dado
-		if (n == nullptr) return n;
-		if (value < n->value) {
-			return _find(n->leftChild, value);
-		}
-		else if (value > n->value) {
-			return _find(n->rightChild, value);
-		}
-		else return n;
+	Node* _find(Node* n, std::function<bool(T)> equals) { //busqueda de un nodo segun criterio 
+		if (n == nullptr) return nullptr;
+		if (equals(n->value)) return n;
+
+		Node* tmp = _find(n->leftChild, equals);
+		if (tmp != nullptr) return tmp;
+
+		tmp = _find(n->rightChild, equals);
+		return tmp;
 	}
 	bool _isEmpty() {
 		return _root == nullptr;
@@ -169,10 +169,8 @@ public:
 	int leafs() {
 		return _leafs(_root);
 	}
-	bool find(T value) {
-		if (_find(_root, value)) {
-			return true;
-		}
+	bool find(std::function<bool(T)> equals) {
+		if (_find(_root, equals) != nullptr) return true;
 		return false;
 	}
 	T max() {
