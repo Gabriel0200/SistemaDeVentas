@@ -10,16 +10,17 @@ private:
     string _fullName;
 public:
     Admin() {}
-    Admin(unsigned int _id, string _fullname) :_id(_id), _fullName(_fullName){}
+    Admin(unsigned int id, string fullName) :_id(id), _fullName(fullName){}
     ~Admin() {}
     unsigned int getId() { return this->_id; }
     void setId(unsigned int id) { this->_id = id; }
     void setName(string fullName) { this->_fullName = fullName; }
     string getName() { return this->_fullName; }
-    string toString() { return "Id: " + to_string(this->_id) + " " + "Nombre: " + this->_fullName; }
-    bool operator==(const Admin& a) {
-        return this->_id == a._id;
+    friend ostream& operator<<(ostream& os, const Admin& a) {
+        os << a._id << ", " << a._fullName;
+        return os;
     }
+
 };
 
 #endif

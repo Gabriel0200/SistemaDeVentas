@@ -6,6 +6,7 @@ int code = 0;
 
 void mainMenu(Controller* controller);
 void adminLoginMenu(Controller* controller);
+void adminMainMenu(Controller* controller);
 void checkClientMenu(Controller* controller);
 void buyProductsMenu(Controller* controller);
 void shoppingCartMenu(Controller* controller);
@@ -44,10 +45,37 @@ void adminLoginMenu(Controller* controller) {
     string name = "";
     cout << "         Ingresar ID de Administrador      " << endl;
     cout << "___________________________________________" << endl;
-    cout << "Ingrese su ID del administrador: ";
+    cout << "Ingrese su ID de administrador: ";
     cin >> adminId;
     controller->enterAdminId(adminId);
-    controller->get_loginAdminVerify() == true ? buyProductsMenu(controller) : (cout << "ID no registrado" << endl, system("pause"), mainMenu(controller));
+    controller->get_loginAdminVerify() == true ? adminMainMenu(controller) : (cout << "ID no registrado" << endl, system("pause"), mainMenu(controller));
+}
+void adminMainMenu(Controller* controller) {
+    code = 0;
+    system("cls");
+    cout << "              Menu de administrador            " << endl;
+    cout << "_______________________________________________" << endl;
+    cout << "1. Mostrar a los administradores en el sistema " << endl;
+    cout << "2. " << endl;
+    cout << "3. Volver al menu principal" << endl;
+    cout << "_______________________________________________" << endl;
+    cout << "Ingrese la opcion que desea: ";
+    cin >> code;
+    switch (code) {
+    case 1: 
+        system("cls");
+        controller->displayAdmins();
+        system("pause");
+        adminMainMenu(controller);
+        break;
+    case 2:
+        system("cls");
+        break;
+    case 3: 
+        mainMenu(controller);
+        break;
+    default: adminMainMenu(controller);
+    }
 }
 void checkClientMenu(Controller* controller) {
     system("cls");

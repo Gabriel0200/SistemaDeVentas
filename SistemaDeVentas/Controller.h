@@ -46,6 +46,9 @@ public:
 		this->shoppingCartTotalPrice = 0;
 		this->orderInformation = new OrderInformation(listOfClients);
 	}
+	void displayAdmins() {
+		admin_t.display();
+	}
 	void enterAdminId(unsigned int id) { //verifica si el ID de admin ingresado se encuentra en el dataset
 		if (admin_t.verifyAdmin(id) == true) {
 			loginAdminVerify = true;
