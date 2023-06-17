@@ -122,7 +122,7 @@ private:
         }
         return d;
     }
-    bool _isPerfect(Node* n, int d, int level = 0) {
+    bool _isPerfect(Node* n, int d, int level = 0) { //todos los nodos internos tienen dos hijos y todas las hojas están al mismo nivel
         if (n == nullptr) return true;
         if (n->leftChild == nullptr && n->rightChild == nullptr) return (d == level + 1);
         if (n->leftChild == nullptr || n->rightChild == nullptr) return false;
@@ -168,6 +168,12 @@ public:
     bool find(std::function<bool(T)> equals) {
         if (_find(_root, equals) != nullptr) return true;
         return false;
+    }
+    T getNode(std::function<bool(T)> equals) {
+        if (find(equals) == true) {
+            return _find(_root, equals)->value;
+        }
+        else throw "Node not found";
     }
     // Rightmost element
     T max() {

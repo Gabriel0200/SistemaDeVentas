@@ -24,6 +24,7 @@ class Controller {
 	ProductDatabase product_l;
 	AdminDatabase admin_db; //inicializando adminDatabase
 	ShoppingCart* shoppingCart_v;
+	string currentAdmin;
 	bool loginAdminVerify;
 	bool loginVerify;
 	bool productAdded;
@@ -45,6 +46,7 @@ public:
 		this->shoppingCart_v = new ShoppingCart(listOfProducts);
 		this->shoppingCartTotalPrice = 0;
 		this->orderInformation = new OrderInformation(listOfClients);
+		this->currentAdmin = "";
 	}
 	//MÉTODOS PARA ADMIN
 	void displayAdmins() {
@@ -53,6 +55,7 @@ public:
 	void enterAdminId(unsigned int id) { //verifica si el ID de admin ingresado se encuentra en el dataset
 		if (admin_db.verifyAdmin(id) == true) {
 			loginAdminVerify = true;
+			currentAdmin = admin_db.getAdminName();
 		}
 		else loginAdminVerify = false;
 	}
@@ -64,6 +67,9 @@ public:
 	}
 	void inOrderAdminName() { //muestra el AVL de admins en orden por nombre
 		this->admin_db.inOrderName();
+	}
+	void isAdminAVLPerfect() {
+		this->admin_db.isPerfectAVL();
 	}
 	/////////////////////////////////////////////////
 	void enterClientName(string fullName) {
@@ -114,6 +120,9 @@ public:
 	}
 	bool get_shoppingCartEmpty() {
 		return shoppingCartEmpty;
+	}
+	string get_currentAdmin() {
+		return currentAdmin;
 	}
 };
 #endif

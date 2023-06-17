@@ -4,22 +4,14 @@
 #include <sstream>
 #include <iostream>
 #include "Admin.h"
-#include "BST.h"
 #include "AVL.h" 
 
 class AdminDatabase {
-	//BinarySearchTree<Admin>* _adminTree;
 	AVLTree<Admin>* _adminAVLID;
 	AVLTree<Admin>* _adminAVLName;
+	Admin _user;
 public:
 	AdminDatabase() {
-		/*_adminTree = new BinarySearchTree<Admin>(
-			[](Admin a) -> void {
-				std::cout << a << "\n";
-			},
-			[](Admin a, Admin b) -> bool {
-				return a.getId() > b.getId();
-			});*/
 		_adminAVLID = new AVLTree<Admin>(
 			[](Admin a) -> void {
 				std::cout << a << "\n";
@@ -34,6 +26,7 @@ public:
 			[](Admin a, Admin b) -> bool {
 				return a.getName() > b.getName();
 			});
+		_user = Admin();
 	}
 	~AdminDatabase() {}
 
@@ -61,7 +54,6 @@ public:
 	}
 	void display() {
 		cout << "Administradores en el sistema: " << "\n";
-		//this->_adminTree->preOrder();
 		this->_adminAVLID->preOrder();
 	}
 	//Ordenamientos
@@ -79,8 +71,10 @@ public:
 			if (a.getId() == adminLoginID) return true;
 			return false;
 		};
-		if (this->_adminAVLID->find(equals) == true) return true;
-		return false;
+		if (this->_adminAVLID->find(equals) == true) {
+			_user.setName(this->_adminAVLID->getNode(equals).getName());
+			return true;			
+		}else return false;		
 	}
 	void findAdmin(string adminName) {
 		auto equals = [adminName](Admin a)-> bool {
@@ -89,7 +83,15 @@ public:
 		};
 		if (this->_adminAVLID->find(equals) == true) {
 			cout << "Nombre " << adminName << " encontrado" << "\n";
+			cout << this->_adminAVLID->getNode(equals) << "\n";
 		}else cout << "Nombre " << adminName << " no encontrado" << "\n";
+	}
+	void isPerfectAVL() {
+		if (this->_adminAVLID->isPerfect() == true) cout << "El arbol es perfecto" << "\n";
+		else cout << "El arbol no es perfecto" << "\n";
+	}
+	string getAdminName() {
+		return _user.getName();
 	}
 };
 #endif

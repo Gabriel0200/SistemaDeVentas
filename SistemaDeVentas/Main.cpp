@@ -54,13 +54,16 @@ void adminMainMenu(Controller* controller) {
     code = 0;
     string name = "";
     system("cls");
+    cout << "Bienvenido " << controller->get_currentAdmin() << "!" << endl;
+    cout << "______________________________________________________________" << endl;
     cout << "                     Menu de administrador                    " << endl;
     cout << "______________________________________________________________" << endl;
     cout << "1. Mostrar a los administradores en el sistema en un AVL      " << endl;
     cout << "2. Mostrar a los administradores en orden por ID" << endl;
     cout << "3. Mostrar a los administradores en orden por Nombre" << endl;
     cout << "4. Buscar administrador por nombre" << endl;
-    cout << "5. Volver al menu principal" << endl;
+    cout << "5. Verificar si el arbol es perfecto" << endl;
+    cout << "6. Volver al menu principal" << endl;
     cout << "______________________________________________________________" << endl;
     cout << "Ingrese la opcion que desea: ";
     cin >> code;
@@ -94,6 +97,11 @@ void adminMainMenu(Controller* controller) {
         adminMainMenu(controller);
         break;
     case 5:
+        controller->isAdminAVLPerfect();
+        system("pause");
+        adminMainMenu(controller);
+        break;
+    case 6:
         mainMenu(controller);
         break;
     default: adminMainMenu(controller);
