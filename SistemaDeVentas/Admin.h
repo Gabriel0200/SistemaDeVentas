@@ -20,7 +20,6 @@ public:
         os << a._id << ", " << a._fullName;
         return os;
     }
-
 };
 
 #endif

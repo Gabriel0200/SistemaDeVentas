@@ -114,6 +114,7 @@
   <ItemGroup>
     <ClInclude Include="Admin.h" />
     <ClInclude Include="AdminDatabase.h" />
+    <ClInclude Include="AVL.h" />
     <ClInclude Include="BST.h" />
     <ClInclude Include="Client.h" />
     <ClInclude Include="Controller.h" />

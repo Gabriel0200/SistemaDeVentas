@@ -3,6 +3,7 @@
 #include "Client.h"
 #include "Admin.h"
 #include "BST.h"
+#include "AVL.h"
 #include "AdminDatabase.h"
 #include "DoublyLinkedList.h"
 #include "OrderInformation.h"
@@ -19,10 +20,9 @@ class Controller {
 	OrderInformation* orderInformation;
 	DoublyLinkedList<Client> listOfClients;
 	DoublyLinkedList<Product> listOfProducts;
-	//BinarySearchTree<Admin>* treeOfAdmins;
 	CustomerDatabase client_l;
 	ProductDatabase product_l;
-	AdminDatabase admin_t; //inicializando adminDatabase
+	AdminDatabase admin_db; //inicializando adminDatabase
 	ShoppingCart* shoppingCart_v;
 	bool loginAdminVerify;
 	bool loginVerify;
@@ -33,7 +33,7 @@ public:
 	Controller() {
 		this->client_l.set_list(listOfClients);
 		this->product_l.set_list(listOfProducts);
-		this->admin_t.load_data(); //leyendo de archivo
+		this->admin_db.load_data(); //leyendo de archivo
 		this->client_l.load_data();
 		this->product_l.load_data();
 		this->listOfClients = client_l.get_list();
@@ -46,15 +46,26 @@ public:
 		this->shoppingCartTotalPrice = 0;
 		this->orderInformation = new OrderInformation(listOfClients);
 	}
+	//MÉTODOS PARA ADMIN
 	void displayAdmins() {
-		admin_t.display();
+		this->admin_db.display();
 	}
 	void enterAdminId(unsigned int id) { //verifica si el ID de admin ingresado se encuentra en el dataset
-		if (admin_t.verifyAdmin(id) == true) {
+		if (admin_db.verifyAdmin(id) == true) {
 			loginAdminVerify = true;
 		}
 		else loginAdminVerify = false;
 	}
+	void findAdminByName(string name) {
+		admin_db.findAdmin(name);
+	}
+	void inOrderAdminID() { //muestra el AVL de admins en orden por ID
+		this->admin_db.inOrderID();
+	}
+	void inOrderAdminName() { //muestra el AVL de admins en orden por nombre
+		this->admin_db.inOrderName();
+	}
+	/////////////////////////////////////////////////
 	void enterClientName(string fullName) {
 		this->login = new Login(listOfClients, fullName);
 		if (login->verify() == true) {

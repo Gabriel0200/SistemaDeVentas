@@ -52,13 +52,16 @@ void adminLoginMenu(Controller* controller) {
 }
 void adminMainMenu(Controller* controller) {
     code = 0;
+    string name = "";
     system("cls");
-    cout << "              Menu de administrador            " << endl;
-    cout << "_______________________________________________" << endl;
-    cout << "1. Mostrar a los administradores en el sistema " << endl;
-    cout << "2. " << endl;
-    cout << "3. Volver al menu principal" << endl;
-    cout << "_______________________________________________" << endl;
+    cout << "                     Menu de administrador                    " << endl;
+    cout << "______________________________________________________________" << endl;
+    cout << "1. Mostrar a los administradores en el sistema en un AVL      " << endl;
+    cout << "2. Mostrar a los administradores en orden por ID" << endl;
+    cout << "3. Mostrar a los administradores en orden por Nombre" << endl;
+    cout << "4. Buscar administrador por nombre" << endl;
+    cout << "5. Volver al menu principal" << endl;
+    cout << "______________________________________________________________" << endl;
     cout << "Ingrese la opcion que desea: ";
     cin >> code;
     switch (code) {
@@ -70,8 +73,27 @@ void adminMainMenu(Controller* controller) {
         break;
     case 2:
         system("cls");
+        controller->inOrderAdminID();
+        system("pause");
+        adminMainMenu(controller);
         break;
     case 3: 
+        system("cls");
+        controller->inOrderAdminName();
+        system("pause");
+        adminMainMenu(controller);
+        break;
+    case 4:
+        system("cls");
+        cout << "    Buscar administrador por nombre    " << endl;
+        cout << "_______________________________________" << endl;
+        cout << "Ingrese el nombre que desea buscar: ";
+        cin >> name;
+        controller->findAdminByName(name);        
+        system("pause");
+        adminMainMenu(controller);
+        break;
+    case 5:
         mainMenu(controller);
         break;
     default: adminMainMenu(controller);
