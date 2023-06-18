@@ -119,7 +119,10 @@
     <ClInclude Include="Client.h" />
     <ClInclude Include="Controller.h" />
     <ClInclude Include="CustomerDatabase.h" />
+    <ClInclude Include="Delivery.h" />
+    <ClInclude Include="DeliveryDatabase.h" />
     <ClInclude Include="DoublyLinkedList.h" />
+    <ClInclude Include="HashTable.h" />
     <ClInclude Include="Login.h" />
     <ClInclude Include="MyVector.h" />
     <ClInclude Include="OrderInformation.h" />
@@ -133,6 +136,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="adminDataset.csv" />
+    <None Include="delivery_dataset.csv" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

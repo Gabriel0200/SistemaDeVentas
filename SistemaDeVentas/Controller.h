@@ -5,6 +5,7 @@
 #include "BST.h"
 #include "AVL.h"
 #include "AdminDatabase.h"
+#include "DeliveryDatabase.h"
 #include "DoublyLinkedList.h"
 #include "OrderInformation.h"
 #include "Product.h"
@@ -22,6 +23,7 @@ class Controller {
 	DoublyLinkedList<Product> listOfProducts;
 	CustomerDatabase client_l;
 	ProductDatabase product_l;
+	DeliveryDatabase delivery_db;
 	AdminDatabase admin_db; //inicializando adminDatabase
 	ShoppingCart* shoppingCart_v;
 	string currentAdmin;
@@ -34,7 +36,8 @@ public:
 	Controller() {
 		this->client_l.set_list(listOfClients);
 		this->product_l.set_list(listOfProducts);
-		this->admin_db.load_data(); //leyendo de archivo
+		this->admin_db.load_data(); //leyendo de admindataset
+		this->delivery_db.load_data(); //leyendo de deliverydataset
 		this->client_l.load_data();
 		this->product_l.load_data();
 		this->listOfClients = client_l.get_list();
@@ -51,6 +54,12 @@ public:
 	//MÉTODOS PARA ADMIN
 	void displayAdmins() {
 		this->admin_db.display();
+	}
+	void displayDeliveries() {
+		this->delivery_db.display();
+	}
+	void showByStatus(int status) {
+		this->delivery_db.showByStatus(status);
 	}
 	void enterAdminId(unsigned int id) { //verifica si el ID de admin ingresado se encuentra en el dataset
 		if (admin_db.verifyAdmin(id) == true) {

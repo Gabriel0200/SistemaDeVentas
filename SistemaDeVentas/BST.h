@@ -1,5 +1,6 @@
 #ifndef BST_H
 #define BST_H
+#include <vector>
 #include <functional>
 
 template<class T>
@@ -140,6 +141,15 @@ private:
 		tmp = _getSibling(n->rightChild, value, equals);
 		return tmp;
 	}
+	bool _isLeafNode(Node* n) { // Si es que es nodo hoja
+		return n->leftChild == nullptr && n->rightChild == nullptr;
+	}
+	bool _hasOneChild(Node* n) { // Si es que tiene un solo hijo
+		return (n->leftChild != nullptr && n->rightChild == nullptr) || (n->leftChild == nullptr && n->rightChild != nullptr);
+	}
+	bool _hasTwoChilds(Node* n) {
+		return n->leftChild != nullptr && n->rightChild != nullptr;
+	}
 public:
 	BinarySearchTree(DisplayFunction show, ComparisonCriteria compare) : _show(show), _compare(compare) {
 		_root = nullptr;
@@ -172,6 +182,28 @@ public:
 	bool find(std::function<bool(T)> equals) {
 		if (_find(_root, equals) != nullptr) return true;
 		return false;
+	}
+	T getNode(std::function<bool(T)> equals) {
+		if (find(equals) == true) {
+			return _find(_root, equals)->value;
+		}
+		else throw "Node not found";
+	}
+	std::vector<Node*> getNodes(std::function<bool(T)> equals, std::function<bool(T)> comp) {
+		std::vector<Node*> nodes;
+		Node* n = _root;
+		while (n != nullptr) {
+			if (equals(n->value)) {
+				nodes.push_back(n);				
+			}
+			if (comp(n->value)) {
+				n = n->leftChild;
+			}
+			else {
+				n = n->rightChild;
+			}								
+		}
+		return nodes;
 	}
 	T max() {
 		Node* aux = _root;

@@ -7,6 +7,8 @@ int code = 0;
 void mainMenu(Controller* controller);
 void adminLoginMenu(Controller* controller);
 void adminMainMenu(Controller* controller);
+void adminAVLMenu(Controller* controller);
+void adminDeliveryMenu(Controller* controller);
 void checkClientMenu(Controller* controller);
 void buyProductsMenu(Controller* controller);
 void shoppingCartMenu(Controller* controller);
@@ -14,6 +16,7 @@ void purchaseMenu(Controller* controller);
 void orderInformationMenu(Controller* controller);
 
 int main() {
+    srand(time(0));
     Controller* controller = new Controller();
     mainMenu(controller);
 }
@@ -52,11 +55,42 @@ void adminLoginMenu(Controller* controller) {
 }
 void adminMainMenu(Controller* controller) {
     code = 0;
-    string name = "";
     system("cls");
     cout << "Bienvenido " << controller->get_currentAdmin() << "!" << endl;
-    cout << "______________________________________________________________" << endl;
-    cout << "                     Menu de administrador                    " << endl;
+    cout << "____________________________________________" << endl;
+    cout << "             Menu de administrador          " << endl;
+    cout << "____________________________________________" << endl;
+    cout << "1. Opciones de administrador (AVL)" << endl;
+    cout << "2. Manejo de deliveries (BST)" << endl;
+    cout << "3. " << endl;
+    cout << "4. Volver al menu principal" << endl;
+    cout << "____________________________________________" << endl;
+    cout << "Ingrese la opcion que desea: ";
+    cin >> code;
+    switch (code) {
+    case 1:
+        system("cls");
+        adminAVLMenu(controller);
+        break;
+    case 2:
+        system("cls");
+        adminDeliveryMenu(controller);
+        break;
+    case 3:
+        system("cls");
+
+        break;
+    case 4: 
+        mainMenu(controller);
+        break;
+    default:adminMainMenu(controller);
+    }
+}
+void adminAVLMenu(Controller* controller) {
+    code = 0;
+    string name = "";
+    system("cls");
+    cout << "                    Opciones de administrador                 " << endl;
     cout << "______________________________________________________________" << endl;
     cout << "1. Mostrar a los administradores en el sistema en un AVL      " << endl;
     cout << "2. Mostrar a los administradores en orden por ID" << endl;
@@ -68,23 +102,23 @@ void adminMainMenu(Controller* controller) {
     cout << "Ingrese la opcion que desea: ";
     cin >> code;
     switch (code) {
-    case 1: 
+    case 1:
         system("cls");
         controller->displayAdmins();
         system("pause");
-        adminMainMenu(controller);
+        adminAVLMenu(controller);
         break;
     case 2:
         system("cls");
         controller->inOrderAdminID();
         system("pause");
-        adminMainMenu(controller);
+        adminAVLMenu(controller);
         break;
-    case 3: 
+    case 3:
         system("cls");
         controller->inOrderAdminName();
         system("pause");
-        adminMainMenu(controller);
+        adminAVLMenu(controller);
         break;
     case 4:
         system("cls");
@@ -92,19 +126,64 @@ void adminMainMenu(Controller* controller) {
         cout << "_______________________________________" << endl;
         cout << "Ingrese el nombre que desea buscar: ";
         cin >> name;
-        controller->findAdminByName(name);        
+        controller->findAdminByName(name);
         system("pause");
-        adminMainMenu(controller);
+        adminAVLMenu(controller);
         break;
     case 5:
         controller->isAdminAVLPerfect();
         system("pause");
-        adminMainMenu(controller);
+        adminAVLMenu(controller);
         break;
     case 6:
-        mainMenu(controller);
+        adminMainMenu(controller);
         break;
-    default: adminMainMenu(controller);
+    default: adminAVLMenu(controller);
+    }
+}
+void adminDeliveryMenu(Controller* controller) {
+    int status = 0;
+    code = 0;
+    system("cls");
+    cout << "            Menu de administrador           " << endl;
+    cout << "____________________________________________" << endl;
+    cout << "1. Mostrar los deliveries en un BST" << endl;
+    cout << "2. Mostrar por estado del delivery" << endl;
+    cout << "3. " << endl;
+    cout << "4. Volver al menu principal" << endl;
+    cout << "____________________________________________" << endl;
+    cout << "Ingrese la opcion que desea: ";
+    cin >> code;
+    switch (code) {
+    case 1:
+        system("cls");
+        controller->displayDeliveries();
+        system("pause");
+        adminDeliveryMenu(controller);
+        break;
+    case 2:
+        system("cls");
+        cout << "      Mostrar por estado del delivery      " << endl;
+        cout << "___________________________________________" << endl;
+        cout << "(1: En proceso, 2: Entregado, 3: Cancelado)" << endl;
+        cout << "Ingrese su opcion: ";
+        cin >> status;
+        system("cls");
+        controller->showByStatus(status);
+        system("pause");
+        adminDeliveryMenu(controller);
+        break;
+    case 3:
+        system("cls");
+
+        system("pause");
+        adminDeliveryMenu(controller);
+        break;
+    case 4:
+        system("cls");
+        adminMainMenu(controller);
+        break;
+    default:adminDeliveryMenu(controller);
     }
 }
 void checkClientMenu(Controller* controller) {
