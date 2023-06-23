@@ -7,6 +7,7 @@
 #include "OrderInformation.h"
 #include "Product.h"
 #include "CustomerDatabase.h"
+#include "SupplierDatabase.h"
 #include "ProductDatabase.h"
 #include "ShoppingCart.h"
 #include "MyVector.h"
@@ -17,8 +18,10 @@ class Controller {
 	OrderInformation* orderInformation;
 	DoublyLinkedList<Client> listOfClients;
 	DoublyLinkedList<Product> listOfProducts;
+	DoublyLinkedList<Supplier> listOfSupplies;
 	CustomerDatabase client_l;
 	ProductDatabase product_l;
+	SupplierDatabase supplier_l;
 	ShoppingCart* shoppingCart_v;
 	bool loginVerify;
 	bool productAdded;
@@ -28,10 +31,13 @@ public:
 	Controller() {
 		this->client_l.set_list(listOfClients);
 		this->product_l.set_list(listOfProducts);
+		this->supplier_l.set_list(listOfSupplies);
 		this->client_l.load_data();
 		this->product_l.load_data();
+		this->supplier_l.load_data();
 		this->listOfClients = client_l.get_list();
 		this->listOfProducts = product_l.get_list();
+		this->listOfSupplies = supplier_l.get_list();
 		this->loginVerify = false;
 		this->productAdded = false;
 		this->shoppingCartEmpty = false;

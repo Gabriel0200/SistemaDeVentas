@@ -1,0 +1,101 @@
+0,ElectraTech,5551234567,info@electratech.com,28751867582
+1,Nexus Appliances,5559876543,contact@nexusappliances.com,2838210221
+2,EnerGlobe,5557890123,sales@energlobe.net,20125877875
+3,OptimaHome,5554567890,info@optimahome.com,26688314280
+4,EcoSmart Solutions,5552345678,support@ecosmartsolutions.com,27710723855
+5,ElectraWave,5558901234,info@electrawave.com,25502134685
+6,Vitality Appliances,5555678901,sales@vitalityappliances.com,15141239591
+7,Innovex Electronics,5550123456,contact@innovexelectronics.com,18653234609
+8,PowerHouse Products,5556789012,info@powerhouseproducts.com,15397513237
+9,EliteTech Appliances,5553456789,sales@elitetechappliances.com,12913089924
+10,EcoLux Appliances,5559012345,info@ecoluxappliances.com,18763685343
+11,EverHome Electronics,5557890123,contact@everhomeelectronics.com,17339203447
+12,PrimeEnergy Solutions,5552345678,info@primeenergysolutions.com,12319922776
+13,SmartWave Appliances,5555678901,support@smartwaveappliances.com,13300677004
+14,VortexTech Electrics,5550123456,sales@vortextechelectrics.com,12873964163
+15,ElectroMax Solutions,5554561234,info@electromaxsolutions.com,27457235163
+16,ElectraTech,5551234567,info@electratech.com,28751867582
+17,Nexus Appliances,5559876543,contact@nexusappliances.com,2838210221
+18,EnerGlobe,5557890123,sales@energlobe.net,20125877875
+19,OptimaHome,5554567890,info@optimahome.com,26688314280
+20,EcoSmart Solutions,5552345678,support@ecosmartsolutions.com,27710723855
+21,ElectraWave,5558901234,info@electrawave.com,25502134685
+22,Vitality Appliances,5555678901,sales@vitalityappliances.com,15141239591
+23,Innovex Electronics,5550123456,contact@innovexelectronics.com,18653234609
+24,PowerHouse Products,5556789012,info@powerhouseproducts.com,15397513237
+25,EliteTech Appliances,5553456789,sales@elitetechappliances.com,12913089924
+26,EcoLux Appliances,5559012345,info@ecoluxappliances.com,18763685343
+27,EverHome Electronics,5557890123,contact@everhomeelectronics.com,17339203447
+28,PrimeEnergy Solutions,5552345678,info@primeenergysolutions.com,12319922776
+29,SmartWave Appliances,5555678901,support@smartwaveappliances.com,13300677004
+30,VortexTech Electrics,5550123456,sales@vortextechelectrics.com,12873964163
+31,ElectroMax Solutions,5554561234,info@electromaxsolutions.com,27457235163
+32,ElectraTech,5551234567,info@electratech.com,28751867582
+33,Nexus Appliances,5559876543,contact@nexusappliances.com,2838210221
+34,EnerGlobe,5557890123,sales@energlobe.net,20125877875
+35,OptimaHome,5554567890,info@optimahome.com,26688314280
+36,EcoSmart Solutions,5552345678,support@ecosmartsolutions.com,27710723855
+37,ElectraWave,5558901234,info@electrawave.com,25502134685
+38,Vitality Appliances,5555678901,sales@vitalityappliances.com,15141239591
+39,Innovex Electronics,5550123456,contact@innovexelectronics.com,18653234609
+40,PowerHouse Products,5556789012,info@powerhouseproducts.com,15397513237
+41,EliteTech Appliances,5553456789,sales@elitetechappliances.com,12913089924
+42,EcoLux Appliances,5559012345,info@ecoluxappliances.com,18763685343
+43,EverHome Electronics,5557890123,contact@everhomeelectronics.com,17339203447
+44,PrimeEnergy Solutions,5552345678,info@primeenergysolutions.com,12319922776
+45,SmartWave Appliances,5555678901,support@smartwaveappliances.com,13300677004
+46,VortexTech Electrics,5550123456,sales@vortextechelectrics.com,12873964163
+47,ElectroMax Solutions,5554561234,info@electromaxsolutions.com,27457235163
+48,ElectraTech,5551234567,info@electratech.com,28751867582
+49,Nexus Appliances,5559876543,contact@nexusappliances.com,2838210221
+50,EnerGlobe,5557890123,sales@energlobe.net,20125877875
+51,OptimaHome,5554567890,info@optimahome.com,26688314280
+52,EcoSmart Solutions,5552345678,support@ecosmartsolutions.com,27710723855
+53,ElectraWave,5558901234,info@electrawave.com,25502134685
+54,Vitality Appliances,5555678901,sales@vitalityappliances.com,15141239591
+55,Innovex Electronics,5550123456,contact@innovexelectronics.com,18653234609
+56,PowerHouse Products,5556789012,info@powerhouseproducts.com,15397513237
+57,EliteTech Appliances,5553456789,sales@elitetechappliances.com,12913089924
+58,EcoLux Appliances,5559012345,info@ecoluxappliances.com,18763685343
+59,EverHome Electronics,5557890123,contact@everhomeelectronics.com,17339203447
+60,PrimeEnergy Solutions,5552345678,info@primeenergysolutions.com,12319922776
+61,SmartWave Appliances,5555678901,support@smartwaveappliances.com,13300677004
+62,VortexTech Electrics,5550123456,sales@vortextechelectrics.com,12873964163
+63,ElectroMax Solutions,5554561234,info@electromaxsolutions.com,27457235163
+64,ElectraTech,5551234567,info@electratech.com,28751867582
+65,Nexus Appliances,5559876543,contact@nexusappliances.com,2838210221
+66,EnerGlobe,5557890123,sales@energlobe.net,20125877875
+67,OptimaHome,5554567890,info@optimahome.com,26688314280
+68,EcoSmart Solutions,5552345678,support@ecosmartsolutions.com,27710723855
+69,ElectraWave,5558901234,info@electrawave.com,25502134685
+70,Vitality Appliances,5555678901,sales@vitalityappliances.com,15141239591
+71,Innovex Electronics,5550123456,contact@innovexelectronics.com,18653234609
+72,PowerHouse Products,5556789012,info@powerhouseproducts.com,15397513237
+73,EliteTech Appliances,5553456789,sales@elitetechappliances.com,12913089924
+74,EcoLux Appliances,5559012345,info@ecoluxappliances.com,18763685343
+75,EverHome Electronics,5557890123,contact@everhomeelectronics.com,17339203447
+76,PrimeEnergy Solutions,5552345678,info@primeenergysolutions.com,12319922776
+77,SmartWave Appliances,5555678901,support@smartwaveappliances.com,13300677004
+78,VortexTech Electrics,5550123456,sales@vortextechelectrics.com,12873964163
+79,ElectroMax Solutions,5554561234,info@electromaxsolutions.com,27457235163
+80,ElectraTech,5551234567,info@electratech.com,28751867582
+81,Nexus Appliances,5559876543,contact@nexusappliances.com,2838210221
+82,EnerGlobe,5557890123,sales@energlobe.net,20125877875
+83,OptimaHome,5554567890,info@optimahome.com,26688314280
+84,EcoSmart Solutions,5552345678,support@ecosmartsolutions.com,27710723855
+85,ElectraWave,5558901234,info@electrawave.com,25502134685
+86,Vitality Appliances,5555678901,sales@vitalityappliances.com,15141239591
+87,Innovex Electronics,5550123456,contact@innovexelectronics.com,18653234609
+88,PowerHouse Products,5556789012,info@powerhouseproducts.com,15397513237
+89,EliteTech Appliances,5553456789,sales@elitetechappliances.com,12913089924
+90,EcoLux Appliances,5559012345,info@ecoluxappliances.com,18763685343
+91,EverHome Electronics,5557890123,contact@everhomeelectronics.com,17339203447
+92,PrimeEnergy Solutions,5552345678,info@primeenergysolutions.com,12319922776
+93,SmartWave Appliances,5555678901,support@smartwaveappliances.com,13300677004
+94,VortexTech Electrics,5550123456,sales@vortextechelectrics.com,12873964163
+95,ElectroMax Solutions,5554561234,info@electromaxsolutions.com,27457235163
+96,VortexTech Electrics,5550123456,sales@vortextechelectrics.com,12873964163
+97,ElectroMax Solutions,5554561234,info@electromaxsolutions.com,27457235163
+98,ElectraTech,5551234567,info@electratech.com,28751867582
+99,Nexus Appliances,5559876543,contact@nexusappliances.com,2838210221
+100,Martin,5552233,martinhernandez@gmail.com,Avenida Imaginaria 2222

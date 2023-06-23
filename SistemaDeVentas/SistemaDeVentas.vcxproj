@@ -123,6 +123,8 @@
     <ClInclude Include="Product.h" />
     <ClInclude Include="ProductDatabase.h" />
     <ClInclude Include="Stack.h" />
+    <ClInclude Include="Supplier.h" />
+    <ClInclude Include="SupplierDatabase.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp" />
