@@ -40,5 +40,8 @@ public:
     }
     void setClientName(string name) { this->_name = name; }
     void setPrice(float price) { this->_price = price; }
+    Client getClient() {
+        return this->_client;
+    }
 };
 #endif

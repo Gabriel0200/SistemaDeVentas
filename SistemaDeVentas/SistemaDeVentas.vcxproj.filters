@@ -25,11 +25,14 @@
     <Filter Include="Archivos de encabezado\Sistema de compras">
       <UniqueIdentifier>{83f4431d-3260-4977-a239-82f2bb27d5ad}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Archivos de encabezado\Entidades">
+      <UniqueIdentifier>{a16515a2-da52-4c69-80bc-ed3e8f3574d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Controladora">
+      <UniqueIdentifier>{18d1c3eb-f111-4ef5-84d4-44a884f06242}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Client.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
     <ClInclude Include="DoublyLinkedList.h">
       <Filter>Archivos de encabezado\Estructura de datos</Filter>
     </ClInclude>
@@ -45,25 +48,53 @@
     <ClInclude Include="ProductDatabase.h">
       <Filter>Archivos de encabezado\Base de datos</Filter>
     </ClInclude>
-    <ClInclude Include="Product.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
     <ClInclude Include="Login.h">
       <Filter>Archivos de encabezado\Sistema de acceso</Filter>
     </ClInclude>
     <ClInclude Include="ShoppingCart.h">
       <Filter>Archivos de encabezado\Sistema de compras</Filter>
     </ClInclude>
-    <ClInclude Include="Controller.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
     <ClInclude Include="OrderInformation.h">
       <Filter>Archivos de encabezado\Sistema de compras</Filter>
+    </ClInclude>
+    <ClInclude Include="BST.h">
+      <Filter>Archivos de encabezado\Estructura de datos</Filter>
+    </ClInclude>
+    <ClInclude Include="AVL.h">
+      <Filter>Archivos de encabezado\Estructura de datos</Filter>
+    </ClInclude>
+    <ClInclude Include="AdminDatabase.h">
+      <Filter>Archivos de encabezado\Base de datos</Filter>
+    </ClInclude>
+    <ClInclude Include="Client.h">
+      <Filter>Archivos de encabezado\Entidades</Filter>
+    </ClInclude>
+    <ClInclude Include="Admin.h">
+      <Filter>Archivos de encabezado\Entidades</Filter>
+    </ClInclude>
+    <ClInclude Include="Product.h">
+      <Filter>Archivos de encabezado\Entidades</Filter>
+    </ClInclude>
+    <ClInclude Include="Controller.h">
+      <Filter>Archivos de encabezado\Controladora</Filter>
+    </ClInclude>
+    <ClInclude Include="Delivery.h">
+      <Filter>Archivos de encabezado\Sistema de compras</Filter>
+    </ClInclude>
+    <ClInclude Include="HashTable.h">
+      <Filter>Archivos de encabezado\Estructura de datos</Filter>
+    </ClInclude>
+    <ClInclude Include="DeliveryDatabase.h">
+      <Filter>Archivos de encabezado\Base de datos</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="adminDataset.csv" />
+    <None Include="delivery_dataset.csv" />
   </ItemGroup>
 </Project>
