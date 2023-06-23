@@ -78,13 +78,19 @@
     <ClInclude Include="Controller.h">
       <Filter>Archivos de encabezado\Controladora</Filter>
     </ClInclude>
-    <ClInclude Include="Delivery.h">
-      <Filter>Archivos de encabezado\Sistema de compras</Filter>
-    </ClInclude>
     <ClInclude Include="HashTable.h">
       <Filter>Archivos de encabezado\Estructura de datos</Filter>
     </ClInclude>
     <ClInclude Include="DeliveryDatabase.h">
+      <Filter>Archivos de encabezado\Base de datos</Filter>
+    </ClInclude>
+    <ClInclude Include="Delivery.h">
+      <Filter>Archivos de encabezado\Entidades</Filter>
+    </ClInclude>
+    <ClInclude Include="Branch.h">
+      <Filter>Archivos de encabezado\Entidades</Filter>
+    </ClInclude>
+    <ClInclude Include="BranchDatabase.h">
       <Filter>Archivos de encabezado\Base de datos</Filter>
     </ClInclude>
   </ItemGroup>
@@ -96,5 +102,6 @@
   <ItemGroup>
     <None Include="adminDataset.csv" />
     <None Include="delivery_dataset.csv" />
+    <None Include="branch_dataset.csv" />
   </ItemGroup>
 </Project>

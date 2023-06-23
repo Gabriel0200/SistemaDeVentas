@@ -115,6 +115,8 @@
     <ClInclude Include="Admin.h" />
     <ClInclude Include="AdminDatabase.h" />
     <ClInclude Include="AVL.h" />
+    <ClInclude Include="Branch.h" />
+    <ClInclude Include="BranchDatabase.h" />
     <ClInclude Include="BST.h" />
     <ClInclude Include="Client.h" />
     <ClInclude Include="Controller.h" />
@@ -136,6 +138,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="adminDataset.csv" />
+    <None Include="branch_dataset.csv" />
     <None Include="delivery_dataset.csv" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

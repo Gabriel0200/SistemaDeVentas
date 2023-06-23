@@ -2,6 +2,7 @@
 #define HASHTABLE_H
 #include <functional>
 #include <string>
+#include <vector>
 
 template<class T>
 class HashTable {
@@ -14,6 +15,7 @@ private:
 	Element** _hashTable;
 	size_t _size;
 	size_t _capacity;
+	std::vector<Element*> _elements;
 private:
 	int _hashFunction(std::string key) {
 		int res = 0;
@@ -77,6 +79,18 @@ public:
 			}
 			show(_hashTable[i]->value);
 		}
+	}
+	std::vector<Element*> getElements(std::function<bool(T)> equals) {
+		_elements.clear();
+		for (int i = 0; i < _capacity; ++i) {
+			if (_hashTable[i] == nullptr) {
+				continue;
+			}
+			if (equals(_hashTable[i]->value)) {
+				_elements.push_back(_hashTable[i]);
+			}			
+		}
+		return _elements;
 	}
 	void erase(std::string key) {
 		int index = _hashFunction(key);

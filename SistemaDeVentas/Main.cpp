@@ -9,6 +9,7 @@ void adminLoginMenu(Controller* controller);
 void adminMainMenu(Controller* controller);
 void adminAVLMenu(Controller* controller);
 void adminDeliveryMenu(Controller* controller);
+void adminBranchMenu(Controller* controller);
 void checkClientMenu(Controller* controller);
 void buyProductsMenu(Controller* controller);
 void shoppingCartMenu(Controller* controller);
@@ -78,7 +79,7 @@ void adminMainMenu(Controller* controller) {
         break;
     case 3:
         system("cls");
-
+        adminBranchMenu(controller);
         break;
     case 4: 
         mainMenu(controller);
@@ -92,11 +93,11 @@ void adminAVLMenu(Controller* controller) {
     system("cls");
     cout << "                    Opciones de administrador                 " << endl;
     cout << "______________________________________________________________" << endl;
-    cout << "1. Mostrar a los administradores en el sistema en un AVL      " << endl;
+    cout << "1. Mostrar a los administradores en el sistema" << endl;
     cout << "2. Mostrar a los administradores en orden por ID" << endl;
     cout << "3. Mostrar a los administradores en orden por Nombre" << endl;
     cout << "4. Buscar administrador por nombre" << endl;
-    cout << "5. Verificar si el arbol es perfecto" << endl;
+    cout << "5. Verificar si el AVL es perfecto" << endl;
     cout << "6. Volver al menu principal" << endl;
     cout << "______________________________________________________________" << endl;
     cout << "Ingrese la opcion que desea: ";
@@ -146,9 +147,9 @@ void adminDeliveryMenu(Controller* controller) {
     int id = 0;
     code = 0;
     system("cls");
-    cout << "            Menu de administrador           " << endl;
+    cout << "             Manejo de deliveries           " << endl;
     cout << "____________________________________________" << endl;
-    cout << "1. Mostrar los deliveries en un BST" << endl;
+    cout << "1. Mostrar los deliveries" << endl;
     cout << "2. Mostrar por estado del delivery" << endl;
     cout << "3. Buscar delivery por ID" << endl;
     cout << "4. Volver al menu principal" << endl;
@@ -189,6 +190,48 @@ void adminDeliveryMenu(Controller* controller) {
         adminMainMenu(controller);
         break;
     default:adminDeliveryMenu(controller);
+    }
+}
+void adminBranchMenu(Controller* controller) {
+    code = 0;
+    string location = "";
+    system("cls");
+    cout << "                  Sucursales                " << endl;
+    cout << "____________________________________________" << endl;
+    cout << "1. Mostrar las sucursales" << endl;
+    cout << "2. Busqueda por locacion" << endl;
+    cout << "3. " << endl;
+    cout << "4. Volver al menu principal" << endl;
+    cout << "____________________________________________" << endl;
+    cout << "Ingrese la opcion que desea: ";
+    cin >> code;
+    switch (code) {
+    case 1:
+        system("cls");
+        controller->displayBranches();
+        system("pause");
+        adminBranchMenu(controller);
+        break;
+    case 2:
+        system("cls");
+        cout << "            Busqueda por locacion           " << endl;
+        cout << "____________________________________________" << endl;
+        cout << "Ingrese la region que desea buscar: ";
+        cin >> location;
+        system("cls");
+        controller->searchHT(location);
+        system("pause");
+        adminBranchMenu(controller);
+        break;
+    case 3:
+        system("cls");
+
+        system("pause");
+        adminBranchMenu(controller);
+        break;
+    case 4: adminMainMenu(controller);
+        break;
+    default: adminBranchMenu(controller);
     }
 }
 void checkClientMenu(Controller* controller) {

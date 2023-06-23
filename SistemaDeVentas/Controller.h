@@ -6,6 +6,7 @@
 #include "AVL.h"
 #include "AdminDatabase.h"
 #include "DeliveryDatabase.h"
+#include "BranchDatabase.h"
 #include "DoublyLinkedList.h"
 #include "OrderInformation.h"
 #include "Product.h"
@@ -24,6 +25,7 @@ class Controller {
 	CustomerDatabase client_l;
 	ProductDatabase product_l;
 	DeliveryDatabase delivery_db;
+	BranchDatabase branch_db;
 	AdminDatabase admin_db; //inicializando adminDatabase
 	ShoppingCart* shoppingCart_v;
 	string currentAdmin;
@@ -38,6 +40,7 @@ public:
 		this->product_l.set_list(listOfProducts);
 		this->admin_db.load_data(); //leyendo de admindataset
 		this->delivery_db.load_data(); //leyendo de deliverydataset
+		this->branch_db.load_data(); //leyendo de branchdataset
 		this->client_l.load_data();
 		this->product_l.load_data();
 		this->listOfClients = client_l.get_list();
@@ -52,6 +55,12 @@ public:
 		this->currentAdmin = "";
 	}
 	//MÉTODOS PARA ADMIN
+	void displayBranches() {
+		this->branch_db.displayHashTable();
+	}
+	void searchHT(string location) {
+		this->branch_db.searchByLocation(location);
+	}
 	void displayAdmins() {
 		this->admin_db.display();
 	}

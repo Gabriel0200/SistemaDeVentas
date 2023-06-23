@@ -130,7 +130,7 @@ private:
 		}
 	}
 	Node* _getSibling(Node* n, T value, std::function<bool(T, T)> equals) {
-		if (n == nullptr || equals(n->value, value)) trow "Node not valid";
+		if (n == nullptr || equals(n->value, value)) throw "Node not valid";
 		if (n->leftChild != nullptr && equals(n->leftChild->value, value)) {
 			return n->rightChild;
 		}
