@@ -62,7 +62,7 @@ void adminMainMenu(Controller* controller) {
     cout << "____________________________________________" << endl;
     cout << "1. Opciones de administrador (AVL)" << endl;
     cout << "2. Manejo de deliveries (BST)" << endl;
-    cout << "3. " << endl;
+    cout << "3. Sucursales (HashTable)" << endl;
     cout << "4. Volver al menu principal" << endl;
     cout << "____________________________________________" << endl;
     cout << "Ingrese la opcion que desea: ";
@@ -143,6 +143,7 @@ void adminAVLMenu(Controller* controller) {
 }
 void adminDeliveryMenu(Controller* controller) {
     int status = 0;
+    int id = 0;
     code = 0;
     system("cls");
     cout << "            Menu de administrador           " << endl;
@@ -175,7 +176,11 @@ void adminDeliveryMenu(Controller* controller) {
         break;
     case 3:
         system("cls");
-
+        cout << "              Buscar Nodo hermano          " << endl;
+        cout << "___________________________________________" << endl;
+        cout << "Ingrese el ID del nodo que desea buscar: ";
+        cin >> id;
+        controller->searchSibling(id);
         system("pause");
         adminDeliveryMenu(controller);
         break;

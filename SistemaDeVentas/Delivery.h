@@ -11,18 +11,12 @@ class Delivery {
 	unsigned int _clientId;
 	std::string _clientAddress;
 	std::string _status;	
-	//std::vector<Delivery*>* deliveries;
 public:
 	Delivery(){}
 	Delivery(unsigned int _clientId, std::string _clientAddress) : _clientId(_clientId), _clientAddress(_clientAddress) {
 		this->_status = STATUS[rand() % 3];
-		//this->deliveries = new vector<Delivery*>;
 	}
-	Delivery(std::string _status) : _status(_status){}
-	/*Delivery(std::string _status) : _status(_status){
-		this->deliveries = new vector<Delivery*>;
-	
-	}*/
+	Delivery(unsigned int _clientId) : _clientId(_clientId) {}
 	~Delivery(){}
 	void setStatus(std::string status){
 		this->_status = status;

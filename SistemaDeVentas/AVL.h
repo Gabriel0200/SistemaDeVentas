@@ -5,7 +5,8 @@
 template<class T>
 class AVLTree {
 private:
-    struct Node {
+    class Node {
+    public:
         T value;
         Node* leftChild;
         Node* rightChild;

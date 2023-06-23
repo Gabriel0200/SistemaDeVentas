@@ -43,21 +43,7 @@ public:
 		cout << "Deliveries del mes: " << "\n";
 		this->tree->preOrder();
 	}
-	void showByStatus(int status) { //1 = En proceso, 2 = Entregado, 3 = Cancelado
-		/*if (status == 1) {
-			Delivery del = Delivery();
-			del.setStatus("En proceso");
-			auto comp = [](Delivery a, Delivery b)-> bool {
-				return a < b;
-			};
-			auto equals = [](Delivery a, Delivery b)-> bool {
-				return a.getStatus() == b.getStatus();
-			};
-			auto insert = [](Delivery a)->void {
-				a.displayDeliveries();
-			};
-			this->tree->findByCriteria(del, equals, comp, insert);
-		}*/		
+	void showByStatus(int status) { //1 = En proceso, 2 = Entregado, 3 = Cancelado	
 		if (status == 1) {
 			auto equals = [](Delivery a)-> bool {
 				if (a.getStatus() == "En proceso") return true;
@@ -88,6 +74,14 @@ public:
 				cout << this->tree->getNodes(equals)[i]->value << "\n";
 			}
 		}
+	}
+	void searchSibling(int node) {
+		auto equals = [](Delivery a, Delivery b) -> bool {
+			if (a.getId() == b.getId()) return true;
+			return false;
+		};
+		Delivery rID = this->tree->getSibling(node, equals);
+		std::cout << "El hermano del nodo con ID " << node << " es: " << rID << "\n";
 	}
 };
 

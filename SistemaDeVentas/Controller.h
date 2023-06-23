@@ -61,6 +61,9 @@ public:
 	void showByStatus(int status) {
 		this->delivery_db.showByStatus(status);
 	}
+	void searchSibling(int id) {
+		this->delivery_db.searchSibling(id);
+	}
 	void enterAdminId(unsigned int id) { //verifica si el ID de admin ingresado se encuentra en el dataset
 		if (admin_db.verifyAdmin(id) == true) {
 			loginAdminVerify = true;
