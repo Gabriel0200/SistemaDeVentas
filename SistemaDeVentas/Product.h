@@ -4,8 +4,6 @@
 //#include <string>
 #include <fstream>
 #include <sstream>
-//using namespace std;
-typedef unsigned int ui;
 
 class Product {
 	std::string id;
@@ -27,7 +25,7 @@ public:
 	std::string getCode() { return this->code; }
 	std::string getID() { return id; }
 	std::string getPrice() {
-		return price;
+		return this->price;
 	}
 };
 

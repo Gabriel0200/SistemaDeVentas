@@ -21,12 +21,12 @@ public:
             if (_nameLogin == c.getName()) {
                 return true;
             }
-            else return false;
+            return false;
         };
         if (this->_clientList.get_list().search_by_value(search)) {
             return true;
         }
-        else return false;
+        return false;
     };
     void setUser(string nameLogin) { this->_nameLogin = nameLogin; }
     string getNameLogin() {
