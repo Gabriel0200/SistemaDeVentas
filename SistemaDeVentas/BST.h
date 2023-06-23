@@ -18,6 +18,7 @@ private:
 	size_t _size;
 	DisplayFunction _show;
 	ComparisonCriteria _compare;
+	std::vector<Node*> _nodes;
 	void _insert(Node*& n, T value) {
 		if (n == nullptr) {
 			n = new Node{ value, nullptr, nullptr };
@@ -150,6 +151,14 @@ private:
 	bool _hasTwoChilds(Node* n) {
 		return n->leftChild != nullptr && n->rightChild != nullptr;
 	}
+	void _getNodes(Node* n, std::function<bool(T)> equals) {
+		if (!n) return;
+		if (equals(n->value)) {
+			_nodes.push_back(n);
+		}
+		_getNodes(n->leftChild, equals);
+		_getNodes(n->rightChild, equals);
+	}
 public:
 	BinarySearchTree(DisplayFunction show, ComparisonCriteria compare) : _show(show), _compare(compare) {
 		_root = nullptr;
@@ -189,21 +198,10 @@ public:
 		}
 		else throw "Node not found";
 	}
-	std::vector<Node*> getNodes(std::function<bool(T)> equals, std::function<bool(T)> comp) {
-		std::vector<Node*> nodes;
-		Node* n = _root;
-		while (n != nullptr) {
-			if (equals(n->value)) {
-				nodes.push_back(n);				
-			}
-			if (comp(n->value)) {
-				n = n->leftChild;
-			}
-			else {
-				n = n->rightChild;
-			}								
-		}
-		return nodes;
+	std::vector<Node*> getNodes(std::function<bool(T)> equals) {
+		_nodes.clear();
+		_getNodes(_root, equals);	
+		return _nodes;
 	}
 	T max() {
 		Node* aux = _root;

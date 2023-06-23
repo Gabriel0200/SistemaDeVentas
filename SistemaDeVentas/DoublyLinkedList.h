@@ -290,10 +290,6 @@ public:
         }
         throw invalid_argument("Code not found");
     }
-    //Agregar heapsort
-    void heapSort() {
-
-    }
     //Aqui termina heapSort
 };
 

@@ -3,18 +3,31 @@
 #include <iostream>
 #include "OrderInformation.h"
 #include <string>
+#include <vector>
+
+std::string STATUS[] = {"Entregado", "En proceso", "Cancelado"};
 
 class Delivery {
-	std::string _clientId;
+	unsigned int _clientId;
 	std::string _clientAddress;
 	std::string _status;	
+	//std::vector<Delivery*>* deliveries;
 public:
 	Delivery(){}
-	Delivery(std::string _clientId, std::string _clientAddress, std::string _status)
-		: _clientId(_clientId), _clientAddress(_clientAddress), _status(_status){
+	Delivery(unsigned int _clientId, std::string _clientAddress) : _clientId(_clientId), _clientAddress(_clientAddress) {
+		this->_status = STATUS[rand() % 3];
+		//this->deliveries = new vector<Delivery*>;
 	}
+	Delivery(std::string _status) : _status(_status){}
+	/*Delivery(std::string _status) : _status(_status){
+		this->deliveries = new vector<Delivery*>;
+	
+	}*/
 	~Delivery(){}
-	std::string getId() {
+	void setStatus(std::string status){
+		this->_status = status;
+	}
+	unsigned int getId() {
 		return this->_clientId;
 	}
 	std::string getStatus() {
@@ -27,7 +40,7 @@ public:
 		os << d._clientId << ", " << d._clientAddress << ", " << d._status;
 		return os;
 	}
-	bool operator<(const Delivery& d) {
+	bool operator<(const Delivery& d) { //<
 		return (this->_status.compare(d._status));
 	}
 };

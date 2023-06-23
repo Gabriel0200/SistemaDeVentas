@@ -149,7 +149,7 @@ void adminDeliveryMenu(Controller* controller) {
     cout << "____________________________________________" << endl;
     cout << "1. Mostrar los deliveries en un BST" << endl;
     cout << "2. Mostrar por estado del delivery" << endl;
-    cout << "3. " << endl;
+    cout << "3. Buscar delivery por ID" << endl;
     cout << "4. Volver al menu principal" << endl;
     cout << "____________________________________________" << endl;
     cout << "Ingrese la opcion que desea: ";
