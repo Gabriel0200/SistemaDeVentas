@@ -148,5 +148,9 @@ public:
 	string get_currentAdmin() {
 		return currentAdmin;
 	}
+	void orderMerge() {
+		shoppingCart_v->sortList();
+		shoppingCart_v->showShoppingCart();
+	}
 };
 #endif

@@ -77,6 +77,9 @@ public:
         }
         return totalPrice;
     }
+    void sortList() {
+        this->cartList.mergeSort(this->cartList.getHead());
+    }
 };
 
 #endif
