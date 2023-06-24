@@ -52,6 +52,20 @@ public:
 			cout << this->htable->getElements(equals)[i]->value << "\n";
 		}
 	}
+	void numOfBranchesByRegion() {		
+		string DEPARTAMENTOS[] = { "Amazonas","Ancash", "Apurimac",  "Arequipa", "Ayacucho", "Cajamarca", "Cusco", "Huancavelica", "Huanuco", "Ica", "Junin",
+		"La Libertad", "Lambayeque", "Lima", "Loreto", "Madre de Dios", "Moquegua", "Pasco", "Piura", "Puno", "San Martin", "Tacna", "Tumbes", "Ucayali" };
+		
+		cout << "Se muestra un reporte de la cantidad de sucursales por region: " << "\n";
+		for (unsigned int i = 0; i < 24; ++i) {
+			Branch branch = Branch(DEPARTAMENTOS[i]);
+			auto equals = [](Branch a, Branch b)-> bool {
+				if (a.getBranchLocation() == b.getBranchLocation()) return true;
+				return false;
+			};		
+			cout << DEPARTAMENTOS[i] << ": " << this->htable->getNumOfElements(branch, equals).size() << "\n";		
+		}			
+	}
 };
 
 #endif

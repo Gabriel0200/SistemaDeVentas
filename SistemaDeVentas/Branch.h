@@ -11,6 +11,7 @@ private:
 public:
     Branch() {}
     Branch(unsigned int _id, string _branchLocation) :_id(_id), _branchLocation(_branchLocation) {}
+    Branch(string _branchLocation) : _branchLocation(_branchLocation) {}
     ~Branch() {}
     unsigned int getId() { return this->_id; }
     void setId(unsigned int id) { this->_id = id; }

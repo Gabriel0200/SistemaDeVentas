@@ -80,6 +80,18 @@ public:
 			show(_hashTable[i]->value);
 		}
 	}
+	std::vector<Element*> getNumOfElements(T value, std::function<bool(T,T)> equals) {
+		_elements.clear();
+		for (int i = 0; i < _capacity; ++i) {
+			if (_hashTable[i] == nullptr) {
+				continue;
+			}
+			if (equals(_hashTable[i]->value, value)) {
+				_elements.push_back(_hashTable[i]);
+			}
+		}
+		return _elements;
+	}
 	std::vector<Element*> getElements(std::function<bool(T)> equals) {
 		_elements.clear();
 		for (int i = 0; i < _capacity; ++i) {

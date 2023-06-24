@@ -61,6 +61,9 @@ public:
 	void searchHT(string location) {
 		this->branch_db.searchByLocation(location);
 	}
+	void locationsReport() {
+		this->branch_db.numOfBranchesByRegion();
+	}
 	void displayAdmins() {
 		this->admin_db.display();
 	}

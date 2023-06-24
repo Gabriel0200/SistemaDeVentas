@@ -196,13 +196,13 @@ void adminBranchMenu(Controller* controller) {
     code = 0;
     string location = "";
     system("cls");
-    cout << "                  Sucursales                " << endl;
-    cout << "____________________________________________" << endl;
+    cout << "                     Sucursales                   " << endl;
+    cout << "__________________________________________________" << endl;
     cout << "1. Mostrar las sucursales" << endl;
     cout << "2. Busqueda por locacion" << endl;
-    cout << "3. " << endl;
+    cout << "3. Reporte de cantidad de sucursales por locacion " << endl;
     cout << "4. Volver al menu principal" << endl;
-    cout << "____________________________________________" << endl;
+    cout << "__________________________________________________" << endl;
     cout << "Ingrese la opcion que desea: ";
     cin >> code;
     switch (code) {
@@ -225,7 +225,7 @@ void adminBranchMenu(Controller* controller) {
         break;
     case 3:
         system("cls");
-
+        controller->locationsReport();
         system("pause");
         adminBranchMenu(controller);
         break;
