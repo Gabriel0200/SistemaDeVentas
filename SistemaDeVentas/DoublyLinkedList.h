@@ -268,29 +268,28 @@ public:
             current = next;
         }
     }
-    bool search_by_value(std::function<bool(T)> search) {
-        Node* tmp = this->_start;
-        while (tmp != nullptr) {
-            if (search(tmp->getData())) {
-                return true;
+    bool search_by_value(std::function<bool(T)> search) { //BigO: O(n)
+        Node* tmp = this->_start; //(1)
+        while (tmp != nullptr) {//(n)
+            if (search(tmp->getData())) {//(1)
+                return true;//(1)
             }
-            tmp = tmp->getNext();
+            tmp = tmp->getNext(); //(1)
         }
-        return false;
+        return false; //(1)
     }
-    T return_by_value(std::function<bool(T)> search) {
-        if (search_by_value(search)) {
-            Node* tmp = this->_start;
-            while (tmp != nullptr) {
-                if (search(tmp->getData())) {
-                    return tmp->getData();
+    T return_by_value(std::function<bool(T)> search) { //BigO: O(n)
+        if (search_by_value(search)) {//(n)
+            Node* tmp = this->_start; //(1)
+            while (tmp != nullptr) {//(n)
+                if (search(tmp->getData())) {//(1)
+                    return tmp->getData();//(1)
                 }
-                tmp = tmp->getNext();
+                tmp = tmp->getNext();//(1)
             }
         }
-        throw invalid_argument("Code not found");
+        throw invalid_argument("Code not found");//(1)
     }
-    //Aqui termina heapSort
 };
 
 #endif 

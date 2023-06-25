@@ -42,14 +42,14 @@ public:
             }
         }
     }
-    void delete_by_index(int idx) {
-        if (idx < 0 || idx >= current) {
-            return;
+    void delete_by_index(int idx) { //BigO: O(n)
+        if (idx < 0 || idx >= current) { //(1)
+            return;//(1)
         }
-        for (int i = idx; i < current - 1; ++i) {
-            arr[i] = arr[i + 1];
+        for (int i = idx; i < current - 1; ++i) {//(n)
+            arr[i] = arr[i + 1];//(1)
         }
-        pop_back();
+        pop_back();//(1)
     }
     /*void delete_by_value(T value) { //Esta funcion no funciona todavía
         for (int i = 0; i < current; ++i) {

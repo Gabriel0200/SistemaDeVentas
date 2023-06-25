@@ -123,21 +123,21 @@ private:
         }
         return d;
     }
-    bool _isPerfect(Node* n, int d, int level = 0) { //todos los nodos internos tienen dos hijos y todas las hojas están al mismo nivel
-        if (n == nullptr) return true;
-        if (n->leftChild == nullptr && n->rightChild == nullptr) return (d == level + 1);
-        if (n->leftChild == nullptr || n->rightChild == nullptr) return false;
-        return _isPerfect(n->leftChild, d, level + 1) && _isPerfect(n->rightChild, d, level + 1);
+    bool _isPerfect(Node* n, int d, int level = 0) { // //BigO: O(n)
+        if (n == nullptr) return true; // (1)
+        if (n->leftChild == nullptr && n->rightChild == nullptr) return (d == level + 1); //(1)
+        if (n->leftChild == nullptr || n->rightChild == nullptr) return false; //(1)
+        return _isPerfect(n->leftChild, d, level + 1) && _isPerfect(n->rightChild, d, level + 1); //(n)
     }
-    Node* _find(Node* n, std::function<bool(T)> equals) { //busqueda de un nodo segun criterio 
-        if (n == nullptr) return nullptr;
-        if (equals(n->value)) return n;
+    Node* _find(Node* n, std::function<bool(T)> equals) {   //BigO: O(n)
+        if (n == nullptr) return nullptr; //(1)
+        if (equals(n->value)) return n; //(1)
 
-        Node* tmp = _find(n->leftChild, equals);
-        if (tmp != nullptr) return tmp;
+        Node* tmp = _find(n->leftChild, equals); //(n)
+        if (tmp != nullptr) return tmp; //(1)
 
-        tmp = _find(n->rightChild, equals);
-        return tmp;
+        tmp = _find(n->rightChild, equals); //(n)
+        return tmp; //(1)
     }
 public:
     AVLTree(std::function<void(T)> show, std::function<bool(T, T)> compare) : _show(show), _compare(compare) {
