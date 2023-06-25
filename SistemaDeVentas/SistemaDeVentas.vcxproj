@@ -131,7 +131,7 @@
     <ClInclude Include="ShoppingCart.h" />
     <ClInclude Include="Product.h" />
     <ClInclude Include="ProductDatabase.h" />
-    <ClInclude Include="Stack.h" />
+    <ClInclude Include="View.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp" />

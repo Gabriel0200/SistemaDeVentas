@@ -16,9 +16,6 @@
     <Filter Include="Archivos de encabezado\Estructura de datos">
       <UniqueIdentifier>{9600feaf-aa36-40ca-b9c9-6ea9990a3e31}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Archivos de encabezado\Base de datos">
-      <UniqueIdentifier>{3d4f4106-3747-4a0f-a175-cc82bfe7b1cd}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Archivos de encabezado\Sistema de acceso">
       <UniqueIdentifier>{836280dd-2c3d-4f0a-afa7-d4a8846d7c66}</UniqueIdentifier>
     </Filter>
@@ -31,6 +28,9 @@
     <Filter Include="Archivos de encabezado\Controladora">
       <UniqueIdentifier>{18d1c3eb-f111-4ef5-84d4-44a884f06242}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Archivos de encabezado\Colecciones">
+      <UniqueIdentifier>{3d4f4106-3747-4a0f-a175-cc82bfe7b1cd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DoublyLinkedList.h">
@@ -39,14 +39,11 @@
     <ClInclude Include="MyVector.h">
       <Filter>Archivos de encabezado\Estructura de datos</Filter>
     </ClInclude>
-    <ClInclude Include="Stack.h">
-      <Filter>Archivos de encabezado\Estructura de datos</Filter>
-    </ClInclude>
     <ClInclude Include="CustomerDatabase.h">
-      <Filter>Archivos de encabezado\Base de datos</Filter>
+      <Filter>Archivos de encabezado\Colecciones</Filter>
     </ClInclude>
     <ClInclude Include="ProductDatabase.h">
-      <Filter>Archivos de encabezado\Base de datos</Filter>
+      <Filter>Archivos de encabezado\Colecciones</Filter>
     </ClInclude>
     <ClInclude Include="Login.h">
       <Filter>Archivos de encabezado\Sistema de acceso</Filter>
@@ -64,7 +61,7 @@
       <Filter>Archivos de encabezado\Estructura de datos</Filter>
     </ClInclude>
     <ClInclude Include="AdminDatabase.h">
-      <Filter>Archivos de encabezado\Base de datos</Filter>
+      <Filter>Archivos de encabezado\Colecciones</Filter>
     </ClInclude>
     <ClInclude Include="Client.h">
       <Filter>Archivos de encabezado\Entidades</Filter>
@@ -82,7 +79,7 @@
       <Filter>Archivos de encabezado\Estructura de datos</Filter>
     </ClInclude>
     <ClInclude Include="DeliveryDatabase.h">
-      <Filter>Archivos de encabezado\Base de datos</Filter>
+      <Filter>Archivos de encabezado\Colecciones</Filter>
     </ClInclude>
     <ClInclude Include="Delivery.h">
       <Filter>Archivos de encabezado\Entidades</Filter>
@@ -91,7 +88,10 @@
       <Filter>Archivos de encabezado\Entidades</Filter>
     </ClInclude>
     <ClInclude Include="BranchDatabase.h">
-      <Filter>Archivos de encabezado\Base de datos</Filter>
+      <Filter>Archivos de encabezado\Colecciones</Filter>
+    </ClInclude>
+    <ClInclude Include="View.h">
+      <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
