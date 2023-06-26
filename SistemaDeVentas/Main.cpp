@@ -9,6 +9,7 @@ void adminLoginMenu(Controller* controller);
 void adminMainMenu(Controller* controller);
 void adminAVLMenu(Controller* controller);
 void supplierAVLMenu(Controller* controller);
+void categoryAVLMenu(Controller* controller);
 void adminDeliveryMenu(Controller* controller);
 void checkClientMenu(Controller* controller);
 void buyProductsMenu(Controller* controller);
@@ -64,8 +65,10 @@ void adminMainMenu(Controller* controller) {
     cout << "____________________________________________" << endl;
     cout << "1. Opciones de administrador (AVL)" << endl;
     cout << "2. Manejo de deliveries (BST)" << endl;
-    cout << "3. " << endl;
-    cout << "4. Volver al menu principal" << endl;
+    cout << "3. Reporte de ventas" << endl;
+    cout << "4. Categorias (avl)" << endl;
+    cout << "5. Provedores (avl)" << endl;
+    cout << "6. Volver al menu principal" << endl;
     cout << "____________________________________________" << endl;
     cout << "Ingrese la opcion que desea: ";
     cin >> code;
@@ -81,16 +84,24 @@ void adminMainMenu(Controller* controller) {
     case 3:
         system("cls");
         controller->ventasRegistrada();
+        system("pause");
+        adminMainMenu(controller);
         break;
-    case 4: 
-        mainMenu(controller);
+    case 4:
+        categoryAVLMenu(controller);
+        break;
+    case 5:
+        supplierAVLMenu(controller);
+        break;
+    case 6:
+        mainMenu(controller); 
         break;
     default:adminMainMenu(controller);
     }
 }
 void supplierAVLMenu(Controller* controller) {
     code = 0;
-    int codigoEmpleado = 0;
+    int codigoProvedor = 0;
     system("cls");
     cout << "                    Opciones de provedores                 " << endl;
     cout << "______________________________________________________________" << endl;
@@ -127,20 +138,75 @@ void supplierAVLMenu(Controller* controller) {
         cout << "    Buscar provedores por Codigo    " << endl;
         cout << "_______________________________________" << endl;
         cout << "Ingrese el Codigo que desea buscar: ";
-        cin >> codigoEmpleado;
-        controller->findSupplierByID(codigoEmpleado);
+        cin >> codigoProvedor; 
+        controller->findSupplierByRuc(codigoProvedor);
         system("pause");
-        supplierAVLMenu(controller);
+        supplierAVLMenu(controller); 
         break;
     case 5:
-        controller->isSupplierAVLPerfect();
-        system("pause");
-        supplierAVLMenu(controller);
+        controller->isSupplierAVLPerfect(); 
+        system("pause"); 
+        supplierAVLMenu(controller); 
         break;
     case 6:
-        mainMenu(controller);
+        mainMenu(controller); 
         break;
     default: adminMainMenu(controller);
+    }
+}
+void categoryAVLMenu(Controller* controller) {
+    code = 0;
+    int codeCategory = 0;
+    system("cls");
+    cout << "                    Opciones de Categoria                 " << endl;
+    cout << "______________________________________________________________" << endl;
+    cout << "1. Mostrar las Categorias en el sistema" << endl;
+    cout << "2. Mostrar las Categorias en orden por id" << endl;
+    cout << "3. Mostrar las Categorias en orden por Nombre" << endl;
+    cout << "4. Buscar Categorias por codigo" << endl;
+    cout << "5. Verificar si el AVL es perfecto" << endl;
+    cout << "6. Volver al menu principal" << endl;
+    cout << "______________________________________________________________" << endl;
+    cout << "Ingrese la opcion que desea: ";
+    cin >> code;
+    switch (code) {
+    case 1:
+        system("cls");
+        controller->displayCategory();
+        system("pause");
+        categoryAVLMenu(controller);
+        break;
+    case 2:
+        system("cls");
+        controller->inOrderACategoryId();
+        system("pause");
+        categoryAVLMenu(controller);
+        break;
+    case 3:
+        system("cls");
+        controller->inOrderCategoryName();
+        system("pause");
+        categoryAVLMenu(controller);
+        break;
+    case 4:
+        system("cls");
+        cout << "    Buscar Categoria por Codigo    " << endl;
+        cout << "_______________________________________" << endl;
+        cout << "Ingrese el Codigo que desea buscar: ";
+        cin >> codeCategory;
+        controller->findCategoryById(codeCategory);
+        system("pause");
+        categoryAVLMenu(controller);
+        break;
+    case 5:
+        controller->isCategoryAVLPerfect();
+        system("pause");
+        categoryAVLMenu(controller); 
+        break;
+    case 6:
+        mainMenu(controller); 
+        break;
+    default: categoryAVLMenu(controller); 
     }
 }
 void adminAVLMenu(Controller* controller) {
@@ -373,6 +439,7 @@ void purchaseMenu(Controller* controller) {
     case 1: shoppingCartMenu(controller);
         break;
     case 2:
+        controller->ventas();
         orderInformationMenu(controller);
         break;
     case 3: mainMenu(controller);

@@ -10,6 +10,9 @@ public:
 	~Report() {
 
 	}
+	int getSuma() {
+		return ventas;
+	}
 	int ventasSuma() {
 		return ++this->ventas;
 	}

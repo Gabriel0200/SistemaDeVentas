@@ -19,6 +19,7 @@
 #include "MyVector.h"
 #include "Login.h"
 #include "Report.h"
+#include "CategoryDatabase.h"
 #include <fstream>
 
 class Controller {
@@ -31,6 +32,7 @@ class Controller {
 	SupplierDatabase supplier_db;//inicializando SupplierDatabase
 	DeliveryDatabase delivery_db;
 	AdminDatabase admin_db; //inicializando adminDatabase
+	CategoryDatabase category_db;
 	ShoppingCart* shoppingCart_v;
 	string currentAdmin;
 	Report _report;
@@ -47,7 +49,8 @@ public:
 		this->delivery_db.load_data(); //leyendo de deliverydataset
 		this->client_l.load_data();
 		this->product_l.load_data();
-		//this->supplier_db.load_data();//leyendo de supplierdataset
+		this->supplier_db.load_data();//leyendo de supplierdataset
+		this->category_db.load_data();
 		this->listOfClients = client_l.get_list();
 		this->listOfProducts = product_l.get_list();
 		this->loginAdminVerify = false;
@@ -93,17 +96,34 @@ public:
 	void displaySupplier() {
 		this->supplier_db.display();
 	}
-	void findSupplierByID(int code) {
-		this->supplier_db.findSupplier(code); //buscar Provedor por Codigo
+	void findSupplierByRuc(int code) {
+		this->supplier_db.findSuppliers(code); //buscar empleado por Codigo
 	}
-	void inOrderASupplierRuc() { //muestra el AVL de provedores en orden por el Ruc
+	void inOrderASupplierRuc() { //muestra el AVL de admins en orden por el Salario
 		this->supplier_db.inOrderRuc();
 	}
-	void inOrderSupplierName() { //muestra el AVL de provedores en orden por el nombre de empresa
+	void inOrderSupplierName() { //muestra el AVL de admins en orden por el nombre
 		this->supplier_db.inOrderName();
 	}
 	void isSupplierAVLPerfect() {
 		this->supplier_db.isPerfectAVL();
+	}
+	////////////////////////////////////////////////
+				/// Categoria ///
+	void displayCategory() {
+		this->category_db.display(); 
+	}
+	void findCategoryById(int code) {
+		this->category_db.findCategory(code); //buscar empleado por Codigo
+	}
+	void inOrderACategoryId() { //muestra el AVL de admins en orden por el Salario
+		this->category_db,inOrderACategoryId();
+	}
+	void inOrderCategoryName() { //muestra el AVL de admins en orden por el nombre
+		this->category_db.inOrderName();
+	}
+	void isCategoryAVLPerfect() {
+		this->category_db.isPerfectAVL();
 	}
 	////////////////////////////////////////////////
 	void enterClientName(string fullName) {
@@ -138,7 +158,6 @@ public:
 		int totalPrice = get_ShoppingCartTotalPrice();
 		string userName = login->getNameLogin();
 		orderInformation->getOrder(userName, totalPrice, shoppingCart_v);
-		///
 	}
 	float get_ShoppingCartTotalPrice() {
 		shoppingCartTotalPrice = shoppingCart_v->getPrecioTotal();
@@ -165,10 +184,13 @@ public:
 	}
 	void ventasRegistrada() {
 		cout << "ventas realizadas:" << endl;
-		cout << _report.ventasSuma() << endl;
+		cout << _report.getSuma() << endl; 
 		int totalPrice = get_ShoppingCartTotalPrice();
 		string userName = login->getNameLogin();
 		orderInformation->getOrder(userName, totalPrice, shoppingCart_v);
+	}
+	void ventas() {
+		_report.ventasSuma();
 	}
 };
 #endif

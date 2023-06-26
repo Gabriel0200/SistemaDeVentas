@@ -21,14 +21,6 @@ private:
 			res += std::pow(static_cast<int>(key[i]), i + 1); //1 + 1 + 1
 		return res % _capacity;// 1
 	}
-	int _hashFunction(std::string key) {
-		int res = 0; // O(1)
-
-		for (unsigned int i = 0; i < key.length(); ++i) // O(n)
-			res += std::pow(static_cast<int>(key[i]), i + 1); // O(1)
-
-		return res % _capacity; // O(1)
-	}
 	int _cuadraticProbing(int colisionIndex) {
 		int jump = 1;
 		int newIndex = colisionIndex;

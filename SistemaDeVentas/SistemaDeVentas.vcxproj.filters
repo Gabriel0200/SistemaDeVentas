@@ -99,6 +99,9 @@
     <ClInclude Include="Category.h">
       <Filter>Archivos de encabezado\Entidades</Filter>
     </ClInclude>
+    <ClInclude Include="CategoryDatabase.h">
+      <Filter>Archivos de encabezado\Base de datos</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">

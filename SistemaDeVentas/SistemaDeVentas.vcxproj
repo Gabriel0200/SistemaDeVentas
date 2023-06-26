@@ -117,6 +117,7 @@
     <ClInclude Include="AVL.h" />
     <ClInclude Include="BST.h" />
     <ClInclude Include="Category.h" />
+    <ClInclude Include="CategoryDatabase.h" />
     <ClInclude Include="Client.h" />
     <ClInclude Include="Controller.h" />
     <ClInclude Include="CustomerDatabase.h" />
