@@ -130,6 +130,7 @@
     <ClInclude Include="Login.h" />
     <ClInclude Include="MyVector.h" />
     <ClInclude Include="OrderInformation.h" />
+    <ClInclude Include="Report.h" />
     <ClInclude Include="ShoppingCart.h" />
     <ClInclude Include="Product.h" />
     <ClInclude Include="ProductDatabase.h" />

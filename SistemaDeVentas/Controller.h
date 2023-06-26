@@ -17,6 +17,7 @@
 #include "ShoppingCart.h"
 #include "MyVector.h"
 #include "Login.h"
+#include "Report.h"
 #include <string>
 
 class Controller {
@@ -32,6 +33,7 @@ class Controller {
 	EmployeeDatabase employee_db; // inicializando el EmployeeDatabase
 	ShoppingCart* shoppingCart_v;
 	string currentAdmin;
+	Report _report;
 	bool loginAdminVerify;
 	bool loginVerify;
 	bool productAdded;
@@ -119,6 +121,15 @@ public:
 		this->employee_db.isPerfectAVL();
 	}
 	//////////////////////////////////////////
+	//REPORT//
+	void ventasRegistrada() {
+		cout << "Ventas realizadas:" << endl;
+		cout << _report.ventasSuma() << endl;
+		int totalPrice = get_ShoppingCartTotalPrice();
+		string userName = login->getNameLogin();
+		orderInformation->getOrder(userName, totalPrice, shoppingCart_v);
+	}
+	///
 	void enterClientName(string fullName) {
 		this->login = new Login(listOfClients, fullName);
 		if (login->verify() == true) {
