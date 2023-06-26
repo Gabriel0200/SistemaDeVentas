@@ -87,6 +87,18 @@
     <ClInclude Include="DeliveryDatabase.h">
       <Filter>Archivos de encabezado\Base de datos</Filter>
     </ClInclude>
+    <ClInclude Include="SupplierDatabase.h">
+      <Filter>Archivos de encabezado\Base de datos</Filter>
+    </ClInclude>
+    <ClInclude Include="Supplier.h">
+      <Filter>Archivos de encabezado\Entidades</Filter>
+    </ClInclude>
+    <ClInclude Include="Report.h">
+      <Filter>Archivos de encabezado\Entidades</Filter>
+    </ClInclude>
+    <ClInclude Include="Category.h">
+      <Filter>Archivos de encabezado\Entidades</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">

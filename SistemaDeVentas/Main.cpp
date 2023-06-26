@@ -8,12 +8,14 @@ void mainMenu(Controller* controller);
 void adminLoginMenu(Controller* controller);
 void adminMainMenu(Controller* controller);
 void adminAVLMenu(Controller* controller);
+void supplierAVLMenu(Controller* controller);
 void adminDeliveryMenu(Controller* controller);
 void checkClientMenu(Controller* controller);
 void buyProductsMenu(Controller* controller);
 void shoppingCartMenu(Controller* controller);
 void purchaseMenu(Controller* controller);
 void orderInformationMenu(Controller* controller);
+
 
 int main() {
     srand(time(0));
@@ -78,12 +80,67 @@ void adminMainMenu(Controller* controller) {
         break;
     case 3:
         system("cls");
-
+        controller->ventasRegistrada();
         break;
     case 4: 
         mainMenu(controller);
         break;
     default:adminMainMenu(controller);
+    }
+}
+void supplierAVLMenu(Controller* controller) {
+    code = 0;
+    int codigoEmpleado = 0;
+    system("cls");
+    cout << "                    Opciones de provedores                 " << endl;
+    cout << "______________________________________________________________" << endl;
+    cout << "1. Mostrar a los provedores en el sistema" << endl;
+    cout << "2. Mostrar a los provedores en orden por RUC" << endl;
+    cout << "3. Mostrar a los provedores en orden por Nombre" << endl;
+    cout << "4. Buscar Empleado por codigo ID" << endl;
+    cout << "5. Verificar si el AVL es perfecto" << endl;
+    cout << "6. Volver al menu principal" << endl;
+    cout << "______________________________________________________________" << endl;
+    cout << "Ingrese la opcion que desea: ";
+    cin >> code;
+    switch (code) {
+    case 1:
+        system("cls");
+        controller->displaySupplier();
+        system("pause");
+        supplierAVLMenu(controller);
+        break;
+    case 2:
+        system("cls");
+        controller->inOrderASupplierRuc();
+        system("pause");
+        supplierAVLMenu(controller);
+        break;
+    case 3:
+        system("cls");
+        controller->inOrderSupplierName();
+        system("pause");
+        supplierAVLMenu(controller);
+        break;
+    case 4:
+        system("cls");
+        cout << "    Buscar provedores por Codigo    " << endl;
+        cout << "_______________________________________" << endl;
+        cout << "Ingrese el Codigo que desea buscar: ";
+        cin >> codigoEmpleado;
+        controller->findSupplierByID(codigoEmpleado);
+        system("pause");
+        supplierAVLMenu(controller);
+        break;
+    case 5:
+        controller->isSupplierAVLPerfect();
+        system("pause");
+        supplierAVLMenu(controller);
+        break;
+    case 6:
+        mainMenu(controller);
+        break;
+    default: adminMainMenu(controller);
     }
 }
 void adminAVLMenu(Controller* controller) {
@@ -175,7 +232,7 @@ void adminDeliveryMenu(Controller* controller) {
         break;
     case 3:
         system("cls");
-
+        
         system("pause");
         adminDeliveryMenu(controller);
         break;
@@ -339,6 +396,7 @@ void orderInformationMenu(Controller* controller) {
     case 1:
         controller->showPaidOrder();
         system("pause");
+        mainMenu(controller);
         break;
     case 2: mainMenu(controller);
         break;

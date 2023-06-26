@@ -116,6 +116,7 @@
     <ClInclude Include="AdminDatabase.h" />
     <ClInclude Include="AVL.h" />
     <ClInclude Include="BST.h" />
+    <ClInclude Include="Category.h" />
     <ClInclude Include="Client.h" />
     <ClInclude Include="Controller.h" />
     <ClInclude Include="CustomerDatabase.h" />
@@ -126,6 +127,7 @@
     <ClInclude Include="Login.h" />
     <ClInclude Include="MyVector.h" />
     <ClInclude Include="OrderInformation.h" />
+    <ClInclude Include="Report.h" />
     <ClInclude Include="ShoppingCart.h" />
     <ClInclude Include="Product.h" />
     <ClInclude Include="ProductDatabase.h" />

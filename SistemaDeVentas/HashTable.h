@@ -15,11 +15,19 @@ private:
 	size_t _size;
 	size_t _capacity;
 private:
+	int _hashFunction(std::string key) {//big O: O(n)
+		int res = 0; //1
+		for (unsigned int i = 0; i < key.length(); ++i)// 1 + n(1 + ... + 2) //n(1 + 3 + 2)
+			res += std::pow(static_cast<int>(key[i]), i + 1); //1 + 1 + 1
+		return res % _capacity;// 1
+	}
 	int _hashFunction(std::string key) {
-		int res = 0;
-		for (unsigned int i = 0; i < key.length(); ++i)
-			res += std::pow(static_cast<int>(key[i]), i + 1);
-		return res % _capacity;
+		int res = 0; // O(1)
+
+		for (unsigned int i = 0; i < key.length(); ++i) // O(n)
+			res += std::pow(static_cast<int>(key[i]), i + 1); // O(1)
+
+		return res % _capacity; // O(1)
 	}
 	int _cuadraticProbing(int colisionIndex) {
 		int jump = 1;
@@ -42,6 +50,17 @@ private:
 			++jump;
 		}
 		return newIndex;
+	}
+	int rotateHash(std::string key) { //big O: O(n)
+		bool isNegative = key.length() < 0; //1+1
+		if (isNegative) // --> 1 + max(1)
+			key.length() = -key.length(); //1
+		int aux = key.length() % 10; // 1+1
+		key.length() /= 10;//1
+		while (aux < key.length())// --> 1 + n
+			aux *= 10; //1
+		key.length() += aux; //1
+		return isNegative ? -key.length() : key.length(); //1 +max(1)
 	}
 public:
 	HashTable(size_t capacity) : _capacity(capacity) {

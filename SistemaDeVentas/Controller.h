@@ -11,26 +11,29 @@
 #include "DoublyLinkedList.h"
 #include "OrderInformation.h"
 #include "Product.h"
+#include "Supplier.h"
 #include "CustomerDatabase.h"
 #include "SupplierDatabase.h"
 #include "ProductDatabase.h"
 #include "ShoppingCart.h"
 #include "MyVector.h"
 #include "Login.h"
+#include "Report.h"
+#include <fstream>
 
 class Controller {
 	Login* login;
 	OrderInformation* orderInformation;
 	DoublyLinkedList<Client> listOfClients;
 	DoublyLinkedList<Product> listOfProducts;
-	DoublyLinkedList<Supplier> listOfSupplies;
 	CustomerDatabase client_l;
 	ProductDatabase product_l;
-	SupplierDatabase supplier_l;
+	SupplierDatabase supplier_db;//inicializando SupplierDatabase
 	DeliveryDatabase delivery_db;
 	AdminDatabase admin_db; //inicializando adminDatabase
 	ShoppingCart* shoppingCart_v;
 	string currentAdmin;
+	Report _report;
 	bool loginAdminVerify;
 	bool loginVerify;
 	bool productAdded;
@@ -40,15 +43,13 @@ public:
 	Controller() {
 		this->client_l.set_list(listOfClients);
 		this->product_l.set_list(listOfProducts);
-		this->supplier_l.set_list(listOfSupplies);
 		this->admin_db.load_data(); //leyendo de admindataset
 		this->delivery_db.load_data(); //leyendo de deliverydataset
 		this->client_l.load_data();
 		this->product_l.load_data();
-		this->supplier_l.load_data();
+		//this->supplier_db.load_data();//leyendo de supplierdataset
 		this->listOfClients = client_l.get_list();
 		this->listOfProducts = product_l.get_list();
-		this->listOfSupplies = supplier_l.get_list();
 		this->loginAdminVerify = false;
 		this->loginVerify = false;
 		this->productAdded = false;
@@ -88,6 +89,23 @@ public:
 		this->admin_db.isPerfectAVL();
 	}
 	/////////////////////////////////////////////////
+				/// METODOS PROVEDOR ///
+	void displaySupplier() {
+		this->supplier_db.display();
+	}
+	void findSupplierByID(int code) {
+		this->supplier_db.findSupplier(code); //buscar Provedor por Codigo
+	}
+	void inOrderASupplierRuc() { //muestra el AVL de provedores en orden por el Ruc
+		this->supplier_db.inOrderRuc();
+	}
+	void inOrderSupplierName() { //muestra el AVL de provedores en orden por el nombre de empresa
+		this->supplier_db.inOrderName();
+	}
+	void isSupplierAVLPerfect() {
+		this->supplier_db.isPerfectAVL();
+	}
+	////////////////////////////////////////////////
 	void enterClientName(string fullName) {
 		this->login = new Login(listOfClients, fullName);
 		if (login->verify() == true) {
@@ -120,6 +138,7 @@ public:
 		int totalPrice = get_ShoppingCartTotalPrice();
 		string userName = login->getNameLogin();
 		orderInformation->getOrder(userName, totalPrice, shoppingCart_v);
+		///
 	}
 	float get_ShoppingCartTotalPrice() {
 		shoppingCartTotalPrice = shoppingCart_v->getPrecioTotal();
@@ -143,6 +162,13 @@ public:
 	void orderMerge() {
 		shoppingCart_v->sortList();
 		shoppingCart_v->showShoppingCart();
+	}
+	void ventasRegistrada() {
+		cout << "ventas realizadas:" << endl;
+		cout << _report.ventasSuma() << endl;
+		int totalPrice = get_ShoppingCartTotalPrice();
+		string userName = login->getNameLogin();
+		orderInformation->getOrder(userName, totalPrice, shoppingCart_v);
 	}
 };
 #endif
