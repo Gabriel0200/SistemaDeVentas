@@ -93,6 +93,12 @@
     <ClInclude Include="View.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
+    <ClInclude Include="EmployeeDatabase.h">
+      <Filter>Archivos de encabezado\Colecciones</Filter>
+    </ClInclude>
+    <ClInclude Include="Employee.h">
+      <Filter>Archivos de encabezado\Entidades</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -104,5 +110,6 @@
     <None Include="delivery_dataset.csv" />
     <None Include="branch_dataset.csv" />
     <None Include="product_dataset.csv" />
+    <None Include="EmployedDataset.csv" />
   </ItemGroup>
 </Project>

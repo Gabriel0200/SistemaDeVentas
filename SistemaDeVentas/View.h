@@ -47,7 +47,8 @@ class View {
         cout << "1. Opciones de administrador (AVL)" << endl;
         cout << "2. Manejo de deliveries (BST)" << endl;
         cout << "3. Sucursales (HashTable)" << endl;
-        cout << "4. Volver al menu principal" << endl;
+        cout << "4. Empleados (AVL)" << endl;
+        cout << "5. Volver al menu principal" << endl;
         cout << "____________________________________________" << endl;
         cout << "Ingrese la opcion que desea: ";
         cin >> code;
@@ -65,6 +66,9 @@ class View {
             adminBranchMenu(controller);
             break;
         case 4:
+            employeeAVLMenu(controller);
+            break;
+        case 5:
             mainMenu(controller);
             break;
         default:adminMainMenu(controller);
@@ -123,6 +127,61 @@ class View {
             adminMainMenu(controller);
             break;
         default: adminAVLMenu(controller);
+        }
+    }
+    void employeeAVLMenu(Controller* controller) {
+        code = 0;
+        int codigoEmpleado = 0;
+        system("cls");
+        cout << "                    Opciones de Empleados                 " << endl;
+        cout << "______________________________________________________________" << endl;
+        cout << "1. Mostrar a los Empleados en el sistema" << endl;
+        cout << "2. Mostrar a los Empleados en orden por Salario" << endl;
+        cout << "3. Mostrar a los Empleados en orden por Nombre" << endl;
+        cout << "4. Buscar Empleado por codigo" << endl;
+        cout << "5. Verificar si el AVL es perfecto" << endl;
+        cout << "6. Volver al menu principal" << endl;
+        cout << "______________________________________________________________" << endl;
+        cout << "Ingrese la opcion que desea: ";
+        cin >> code;
+        switch (code) {
+        case 1:
+            system("cls");
+            controller->displayEmployed();
+            system("pause");
+            employeeAVLMenu(controller);
+            break;
+        case 2:
+            system("cls");
+            controller->inOrderAEmployedSalary();
+            system("pause");
+            employeeAVLMenu(controller);
+            break;
+        case 3:
+            system("cls");
+            controller->inOrderEmployedName();
+            system("pause");
+            employeeAVLMenu(controller);
+            break;
+        case 4:
+            system("cls");
+            cout << "    Buscar Empleado por Codigo    " << endl;
+            cout << "_______________________________________" << endl;
+            cout << "Ingrese el Codigo que desea buscar: ";
+            cin >> codigoEmpleado;
+            controller->findEmployedByName(codigoEmpleado);
+            system("pause");
+            employeeAVLMenu(controller);
+            break;
+        case 5:
+            controller->isEmployeedAVLPerfect();
+            system("pause");
+            employeeAVLMenu(controller);
+            break;
+        case 6:
+            adminMainMenu(controller);
+            break;
+        default: employeeAVLMenu(controller);
         }
     }
     void adminDeliveryMenu(Controller* controller) {

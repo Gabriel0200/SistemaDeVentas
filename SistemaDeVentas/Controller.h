@@ -1,9 +1,11 @@
 #ifndef CONTROLLER_H
 #define CONTROLLER_H
+#include "Employee.h"
 #include "Client.h"
 #include "Admin.h"
 #include "BST.h"
 #include "AVL.h"
+#include "EmployeeDatabase.h"
 #include "AdminDatabase.h"
 #include "DeliveryDatabase.h"
 #include "BranchDatabase.h"
@@ -27,6 +29,7 @@ class Controller {
 	DeliveryDatabase delivery_db;
 	BranchDatabase branch_db;
 	AdminDatabase admin_db; //inicializando adminDatabase
+	EmployeeDatabase employee_db; // inicializando el EmployeeDatabase
 	ShoppingCart* shoppingCart_v;
 	string currentAdmin;
 	bool loginAdminVerify;
@@ -38,6 +41,7 @@ public:
 	Controller() {
 		this->client_l.set_list(listOfClients);
 		this->product_l.set_list(listOfProducts);
+		this->employee_db.load_data(); //leyendo el EmployeedDataset
 		this->admin_db.load_data(); //leyendo de admindataset
 		this->delivery_db.load_data(); //leyendo de deliverydataset
 		this->branch_db.load_data(); //leyendo de branchdataset
@@ -96,6 +100,25 @@ public:
 		this->admin_db.isPerfectAVL();
 	}
 	/////////////////////////////////////////////////
+	/////////////// EMPLEADOS////////////////
+
+	void displayEmployed() {
+		this->employee_db.display();
+	}
+
+	void findEmployedByName(int code) {
+		this->employee_db.findEmployed(code); //buscar empleado por Codigo
+	}
+	void inOrderAEmployedSalary() { //muestra el AVL de admins en orden por el Salario
+		this->employee_db.inOrderSalary();
+	}
+	void inOrderEmployedName() { //muestra el AVL de admins en orden por el nombre
+		this->employee_db.inOrderName();
+	}
+	void isEmployeedAVLPerfect() {
+		this->employee_db.isPerfectAVL();
+	}
+	//////////////////////////////////////////
 	void enterClientName(string fullName) {
 		this->login = new Login(listOfClients, fullName);
 		if (login->verify() == true) {
