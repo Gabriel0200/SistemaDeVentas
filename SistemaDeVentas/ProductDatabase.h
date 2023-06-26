@@ -14,7 +14,7 @@ public:
 	~ProductDatabase() {}
 
 	void load_data() {
-		std::ifstream file("Productos_BD.txt");
+		std::ifstream file("product_dataset.csv");
 		std::string idProduct, product, tmp, codeProduct, nameProduct, priceProduct;
 
 		while (std::getline(file, product)) {

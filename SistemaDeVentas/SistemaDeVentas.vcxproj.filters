@@ -103,5 +103,6 @@
     <None Include="adminDataset.csv" />
     <None Include="delivery_dataset.csv" />
     <None Include="branch_dataset.csv" />
+    <None Include="product_dataset.csv" />
   </ItemGroup>
 </Project>

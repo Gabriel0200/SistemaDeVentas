@@ -140,6 +140,7 @@
     <None Include="adminDataset.csv" />
     <None Include="branch_dataset.csv" />
     <None Include="delivery_dataset.csv" />
+    <None Include="product_dataset.csv" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
